@@ -44,6 +44,10 @@ use yii\helpers\Url;
   <tr>
     <td height="22" colspan="13" align="center" class="judul"><strong>MEMERINTAHKAN</strong></td>
   </tr>
+  <tr>
+    <td height="22" colspan="13" align="center" class="judul">&nbsp;</td>
+  </tr>
+  
   <tr class="isi">
     <td height="23" align="right">&nbsp;</td>
     <td width="107" align="left" valign="top">Kepada</td>
@@ -246,7 +250,7 @@ if ($bulanSaja1 == $bulanSaja2) {
     <td colspan="2">:&nbsp;S I D O A R J O</td>
   </tr>
   <tr class = "isi">
-    <td height="18" colspan="11" align="right">Pada tgl&nbsp;</td>
+    <td height="18" colspan="11" align="right">Pada tanggal&nbsp;</td>
     <td colspan="2">:&nbsp;<?php echo tanggal_indo($tglSurat, false); ?></td>
   </tr>
   <tr>

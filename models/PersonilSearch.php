@@ -62,7 +62,6 @@ class PersonilSearch extends Personil
             'setuju' => $this->setuju,
             'mengetahui' => $this->mengetahui,
             'lunas' => $this->lunas,
-            'statud' => $this->status,
             'tanda_tangan_surat' => $this->tanda_tangan_surat,
         ]);
 
