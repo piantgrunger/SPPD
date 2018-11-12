@@ -7,17 +7,16 @@ use Yii;
 /**
  * This is the model class for table "{{%tb_m_personil}}".
  *
- * @property int $id_personil
- * @property string $nip
- * @property string $nama_personil
- * @property string $status_personil
- * @property string $golongan
- * @property int $id_pangkat
- * @property int $setuju
- * @property int $mengetahui
- * @property int $lunas
- * @property int $tanda_tangan_surat
- *
+ * @property int        $id_personil
+ * @property string     $nip
+ * @property string     $nama_personil
+ * @property string     $status_personil
+ * @property string     $golongan
+ * @property int        $id_pangkat
+ * @property int        $setuju
+ * @property int        $mengetahui
+ * @property int        $lunas
+ * @property int        $tanda_tangan_surat
  * @property TbMPangkat $pangkat
  */
 class Personil extends \yii\db\ActiveRecord
@@ -36,7 +35,7 @@ class Personil extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nip', 'nama_personil', 'status_personil'], 'required'],
+            [['nip', 'nama_personil', 'status_personil', 'status'], 'required'],
             [['status_personil', 'golongan'], 'string'],
             [['id_pangkat', 'setuju', 'mengetahui', 'lunas', 'tanda_tangan_surat'], 'integer'],
             [['nip', 'nama_personil'], 'string', 'max' => 50],
@@ -70,8 +69,9 @@ class Personil extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Pangkat::className(), ['id_pangkat' => 'id_pangkat']);
     }
+
     public function getNama_pangkat()
     {
-        return is_null($this->pangkat)?"":$this->pangkat->nama_pangkat;
+        return is_null($this->pangkat) ? '' : $this->pangkat->nama_pangkat;
     }
 }
