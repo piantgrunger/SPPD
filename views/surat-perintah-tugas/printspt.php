@@ -24,7 +24,7 @@ use yii\helpers\Url;
 
   <tr class="isi">
   <td height="22" colspan="3" align="center" class="judul">&nbsp;</td>
-    <td height="22" colspan="8" align="center" class="judul"><?= str_replace('~', '&nbsp;', str_pad('Nomor : '.$model->no_spt, 34, '~')); ?></td>
+    <td height="22" colspan="8" align="center" class="judul"><?= str_replace('~', '&nbsp;', str_pad('Nomor : '.$model->no_spt, 24, '~')); ?></td>
     <td height="22" colspan="3" align="center" class="judul">&nbsp;</td>
 
     
