@@ -95,7 +95,7 @@ class SuratPerintahTugasController extends Controller
 
                 $model1->id_d_spt = $model->id_d_spt;
                 $model1->id_spt = $model->id_spt;
-                $model1->realisasi =0;
+                $model1->realisasi = 0;
 
                 array_push($list, $model1);
             }
@@ -130,7 +130,7 @@ class SuratPerintahTugasController extends Controller
 
     public function actionRealisasi($id)
     {
-        $header =$this->findModel($id);
+        $header = $this->findModel($id);
         foreach ($header->detailSuratPerintahTugas as $model) {
             if (count($model->subDetPerintahTugas) === 0) {
                 $dataBiaya = Tarif::find()->where(['id_pangkat' => $model->id_pangkat, 'tujuan' => $model->suratPerintahTugas->zona])->all();
@@ -142,7 +142,7 @@ class SuratPerintahTugasController extends Controller
 
                     $model1->id_d_spt = $model->id_d_spt;
                     $model1->id_spt = $model->id_spt;
-                    $model1->realisasi =0;
+                    $model1->realisasi = 0;
 
                     array_push($list, $model1);
                 }
@@ -185,6 +185,7 @@ class SuratPerintahTugasController extends Controller
    // format content from your own css file if needed or use the
    // enhanced bootstrap css built by Krajee for mPDF formatting
             'cssFile' => '@app/web/css/print.css',
+        'defaultFont' => 'Arial',
    // any css to be embedded if required
             'cssInline' => '.kv-heading-1{font-size:18px}',
     // set mPDF properties on the fly
@@ -213,6 +214,7 @@ class SuratPerintahTugasController extends Controller
             'destination' => Pdf::DEST_BROWSER,
    // your html content input
             'content' => $content,
+            'defaultFont' => 'Arial',
    // format content from your own css file if needed or use the
    // enhanced bootstrap css built by Krajee for mPDF formatting
             'cssFile' => '@app/web/css/print.css',
@@ -247,6 +249,7 @@ class SuratPerintahTugasController extends Controller
    // format content from your own css file if needed or use the
    // enhanced bootstrap css built by Krajee for mPDF formatting
             'cssFile' => '@app/web/css/print.css',
+            'defaultFont' => 'Arial',
    // any css to be embedded if required
             'cssInline' => '.kv-heading-1{font-size:18px}',
     // set mPDF properties on the fly
@@ -277,7 +280,8 @@ class SuratPerintahTugasController extends Controller
             'content' => $content,
    // format content from your own css file if needed or use the
    // enhanced bootstrap css built by Krajee for mPDF formatting
-            'cssFile' => '@app/web/css/print.css',
+           'cssFile' => '@app/web/css/print.css',
+         'defaultFont' => 'Arial',
    // any css to be embedded if required
             'cssInline' => '.kv-heading-1{font-size:18px}',
     // set mPDF properties on the fly
@@ -309,6 +313,7 @@ class SuratPerintahTugasController extends Controller
    // format content from your own css file if needed or use the
    // enhanced bootstrap css built by Krajee for mPDF formatting
             'cssFile' => '@app/web/css/print.css',
+         'defaultFont' => 'Arial',
    // any css to be embedded if required
             'cssInline' => '.kv-heading-1{font-size:18px}',
     // set mPDF properties on the fly
@@ -337,9 +342,10 @@ class SuratPerintahTugasController extends Controller
             'destination' => Pdf::DEST_BROWSER,
    // your html content input
             'content' => $content,
+            'defaultFont' => 'Arial',
    // format content from your own css file if needed or use the
    // enhanced bootstrap css built by Krajee for mPDF formatting
-            'cssFile' => '@app/web/css/print.css',
+          'cssFile' => '@app/web/css/print.css',
    // any css to be embedded if required
             'cssInline' => '.kv-heading-1{font-size:18px}',
     // set mPDF properties on the fly
@@ -422,6 +428,7 @@ class SuratPerintahTugasController extends Controller
             ]);
             } else {
                 Yii::$app->session->setFlash('error', 'Data Tidak Dapat Dikoreksi Karena Sudah Dibuat SPPD ');
+
                 return $this->redirect(['index']);
             }
         }

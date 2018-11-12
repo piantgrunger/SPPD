@@ -15,10 +15,19 @@ use yii\helpers\Url;
     <td colspan="13" align="center">&nbsp;</td>
   </tr>
   <tr>
-    <td height="22" colspan="13" align="center" class="judul"><strong>SURAT PERINTAH TUGAS </strong></td>
+    <td height="22" colspan="3" align="center" class="judul">&nbsp;</td>
+    <td height="22" colspan="8" align="center" class="judul"><strong><u>SURAT PERINTAH TUGAS</u> </strong></td>
+    <td height="22" colspan="3" align="center" class="judul">&nbsp;</td>
+
   </tr>
+
+
   <tr class="isi">
-    <td height="21" colspan="13" align="center">Nomor :&nbsp;<?php echo $model->no_spt; ?></td>
+  <td height="22" colspan="3" align="center" class="judul">&nbsp;</td>
+    <td height="22" colspan="8" align="center" class="judul"><?= str_replace('~', '&nbsp;', str_pad('Nomor : '.$model->no_spt, 34, '~')); ?></td>
+    <td height="22" colspan="3" align="center" class="judul">&nbsp;</td>
+
+    
   </tr>
   <tr>
     <td height="18" colspan="13">&nbsp;</td>
