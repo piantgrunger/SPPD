@@ -9,6 +9,7 @@ use app\models\AlatKelengkapan;
 use app\models\Personil;
 use app\models\Kegiatan;
 use app\models\Kota;
+use app\models\Kendaraan;
 
 $data = ArrayHelper::map(
     AlatKelengkapan::find()->select(['id_alat_kelengkapan', 'alat_kelengkapan'])->where('tahun='.date('Y'))->asArray()->all(),
@@ -30,6 +31,12 @@ $data4 = ArrayHelper::map(
     Kota::find()->select(['id_kota', 'nama_kota' => 'nama_kota'])->asArray()->all(),
 'id_kota',
     'nama_kota'
+);
+
+$data5 = ArrayHelper::map(
+    Kendaraan::find()->select(['nama_kendaraan', 'nama_kendaraan'])->asArray()->all(),
+    'nama_kendaraan',
+    'nama_kendaraan'
 );
 
 /* @var $this yii\web\View */
@@ -67,19 +74,15 @@ $data4 = ArrayHelper::map(
         ],
     ]); ?>
     <?= $form->field($model, 'kendaraan')->widget(Select2::className(), [
-          'data' => ['KENDARAAN UMUM' => 'KENDARAAN UMUM',
-         'KENDARAAN PRIBADI' => 'KENDARAAN PRIBADI',
-         'KENDARAAN DINAS' => 'KENDARAAN DINAS',
-         'PESAWAT UDARA' => 'PESAWAT UDARA',
-          'KERETA API' => 'KERETA API', ],
+          'data' =>$data5,
 
         'options' => ['placeholder' => 'Pilih Kendaraan...'],
         'pluginOptions' => [
             'allowClear' => true,
         ],
     ]);
-   ?> 
-    
+   ?>
+
     <?= $form->field($model, 'id_kegiatan')->widget(Select2::className(), [
         'data' => $data3,
       'readonly' => true,
@@ -96,9 +99,9 @@ $data4 = ArrayHelper::map(
           'allowClear' => true,
       ],
   ]); ?>
-  
 
-    </div> 
+
+    </div>
 
 
 

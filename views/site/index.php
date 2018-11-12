@@ -37,6 +37,10 @@ $this->registerJSFile(Yii::$app->homeUrl.'js/start.js', ['depends' => [yii\web\J
         <span class='fa fa-handshake-o icon'></span>
         <span class='branding-bar'>Kegiatan</span>
          ", ['/kegiatan'], ['data-role' => 'tile', 'class ' => 'bg-red', 'data-effect' => 'animate-slide-up']) : ''; ?>
+ <?= (Mimin::checkRoute('kendaraan/index')) ? Html::a("
+        <span class='fa fa-car icon'></span>
+        <span class='branding-bar'>Kendaraan</span>
+         ", ['/kendaraan'], ['data-role' => 'tile', 'class ' => 'bg-cyan', 'data-effect' => 'animate-slide-up']) : ''; ?>
 
  <?= (Mimin::checkRoute('tarif/index')) ? Html::a("
         <span class='fa fa-money icon'></span>
