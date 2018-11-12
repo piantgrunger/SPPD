@@ -71,7 +71,7 @@ function terbilang($x)
    
  
 
-<table style="page-break-inside:avoid"  autosize="1" width="722" height="822" border="0" cellpadding="5" cellspacing="0" >
+<table class="dataprint"  autosize="1" width="722" height="822" border="0" cellpadding="5" cellspacing="0" >
 
 <tr>
     <td width="715" height="56" colspan="10" align="left" valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size:19px"><img src="<?=Url::to(['/Image/Kop'.$mode.'.png']); ?>" width="100%" height="145" /></td>
@@ -96,59 +96,58 @@ function terbilang($x)
     <td width="13"></td>
     <td colspan="7">&nbsp;</td>
   </tr>
-  <tr class="isi" style="">
-    <td align="center" valign="top" style="border-top:1px #000000 solid;border-left:1px #000000 solid;border-bottom:1px #000000 solid;">1.</td>
-    <td valign="top" style="border-top:1px #000000 solid;border-bottom:1px #000000 solid;">Pejabat yang memberi perintah</td>
-    <td style="border-left:1px #000000 solid;border-bottom:1px #000000 solid;border-left:1px #000000 solid;border-left:1px #000000 solid;border-top:1px #000000 solid;">: </td    ><td colspan="7" style="border-top:1px #000000 solid;border-right:1px #000000 solid;border-bottom:1px #000000 solid;"><?php echo $model->penanda_tangan; ?></td>
+  <tr class="isi" >
+    <td align="center" valign="top" class="print1" >1.</td>
+    <td valign="top"  class="print2">Pejabat yang memberi perintah</td>
+    <td class="print1" >: </td    ><td colspan="7"  class="print3"><?php echo $model->penanda_tangan; ?></td>
   </tr>            
   <tr class="isi">
-    <td align="center" valign="top" style="border-left:1px #000000 solid;border-bottom:1px #000000 solid;">2.</td>
-    <td style="border-bottom:1px #000000 solid;">Nama / NIP Pegawai yang Diperintah mengadakan perjalanan dinas</td>
-    <td valign="top" style="border-left:1px #000000 solid;border-bottom:1px #000000 solid;">: </td>
-    <td colspan="7" valign="top" style="border-right:1px #000000 solid;border-bottom:1px #000000 solid;"><?php echo $row->nama_personil; ?> &nbsp;/&nbsp;<?php echo $row->nip; ?> </td>
+    <td align="center"  valign="top" class="print1" >2.</td>
+    <td  class="print2">Nama / NIP Pegawai yang Diperintah mengadakan perjalanan dinas</td>
+    <td valign="top" class="print1">: </td>
+    <td colspan="7" valign="top" class="print3"><?php echo $row->nama_personil; ?> &nbsp;/&nbsp;<?php echo $row->nip; ?> </td>
   </tr>
   <tr class="isi">
-    <td align="center" valign="top" style="border-left:1px #000000 solid;border-bottom:1px #000000 solid;">3.</td>
-    <td style="border-bottom:1px #000000 solid;">Jabatan, Pangkat dan Golongan dari yang diperintah</td>
-    <td valign="top" style = "border-left:1px #000000 solid;border-bottom:1px #000000 solid;">:</td>
-    <td colspan="7" valign="top" style="border-right:1px #000000 solid;border-bottom:1px #000000 solid;"><?php echo $row->pangkat; ?>&nbsp;/ <?php echo $row->jenis; ?>&nbsp;</td>
+    <td align="center" valign="top" class="print1">3.</td>
+    <td class="print2" >Jabatan, Pangkat dan Golongan dari yang diperintah</td>
+    <td valign="top" style = "" class="print1">:</td>
+    <td colspan="7" valign="top" class="print3" ><?php  echo ($row->status_personil === 'Dewan') ? 'Anggota DPRD' : $row->pangkat; ?>&nbsp;/ <?php echo $row->jenis; ?>&nbsp;</td>
   </tr>
   <tr class="isi">
-    <td width="25" align="center" valign="top" style="border-left:1px #000000 solid;">4.</td>
-    <td valign="top" width="266" style="">Perjalanan Dinas Diperintahkan</td>
-    <td valign="top" style="border-left:1px #000000 solid;">:  </td>
+    <td width="25" align="center" valign="top" class="printkiri" >4.</td>
+    <td valign="top" width="266" >Perjalanan Dinas Diperintahkan</td>
+    <td valign="top" class="printkiri" >:  </td>
     <td width="32" valign="middle">Dari </td>
     <td colspan="1">: Sidoarjo</td>
-    <td colspan="4" style="border-right:1px #000000 solid">&nbsp;</td>
+    <td colspan="5" class="printkanan">&nbsp;</td>
   </tr>
   <tr class="isi">
-    <td style="border-left:1px #000000 solid;">&nbsp;</td>
-    <td style="">&nbsp;</td>
-    <td style="border-left:1px #000000 solid;">&nbsp;</td>
+    <td class="printkiri" >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td  class="printkiri">&nbsp;</td>
     <td>Ke  </td>
-    <td style="border-right:1px #000000 solid;" colspan="6">:&nbsp;<?php echo $model->nama_kota; ?></td>
+    <td colspan="6" class="printkanan">:&nbsp;<?php echo $model->nama_kota; ?></td>
   </tr>
   <tr class="isi">
-    <td style="border-left:1px #000000 solid;border-bottom:1px #000000 solid;">&nbsp;</td>
-    <td style="border-bottom:1px #000000 solid;">&nbsp;</td>
-    <td style="border-left:1px #000000 solid;border-bottom:1px #000000 solid;">&nbsp;</td>
-    <td style="border-bottom:1px #000000 solid;border-right:1px #000000 solid;" colspan="7">Transportasi Menggunakan :&nbsp;<?= $model->kendaraan; ?></td>
+    <td class="printkiri" >&nbsp;</td>
+    <td >&nbsp;</td>
+    <td class="printkiri" >&nbsp;</td>
+    <td  colspan="7" class="printkanan">Transportasi Menggunakan :&nbsp;<?= $model->kendaraan; ?></td>
   </tr>
   <tr class="isi">
-    <td valign="top" align="center" style="border-left:1px #000000 solid;">5.</td>
-    <td valign="top" style="">Perjalanan Dinas direncanakan</td>
-    <td valign="top" style="border-left:1px #000000 solid;">:</td>
-    <td colspan="7" style="border-right:1px #000000 solid;">Selama : <?php echo $model->selisih; ?> ( <?php $angka = $model->selisih;
+    <td valign="top" align="center" class="printkiri printatas">5.</td>
+    <td valign="top" class="printatas" >Perjalanan Dinas direncanakan</td>
+    <td valign="top"  class="printkiri printatas">:</td>
+    <td colspan="7"  class="printatas printkanan">Selama : <?php echo $model->selisih; ?> ( <?php $angka = $model->selisih;
         echo terbilang($angka); ?> ) Hari</td>	
   </tr>
   <tr class="isi">
-    <td style="border-left:1px #000000 solid;border-bottom:1px #000000 solid;">&nbsp;</td>
-    <td style="border-bottom:1px #000000 solid;">&nbsp;</td>
-    <td style="border-left:1px #000000 solid;border-bottom:1px #000000 solid;">&nbsp;</td>
-    <td colspan="7" align="left" style="border-bottom:1px #000000 solid;border-right:1px #000000 solid;">
-<?php 
+    <td class="printkiri printbawah" >&nbsp;</td>
+    <td class="printbawah" >&nbsp;</td>
+    <td class="printbawah printkiri">&nbsp;</td>
+    <td colspan="7" align="left" class="printbawah printkanan"  >
+      Pada Tanggal &nbsp; : &nbsp;
 
-        ?>
    <?php
       $tanggal = $model->tgl_awal;
         $tanggal2 = $model->tgl_akhir;
@@ -161,32 +160,32 @@ function terbilang($x)
             if ($tgl[0] !== $tgl2[0]) {
                 echo $tgl[0].' - '.$tgl2[0].'  '.$tgl[1].'  '.$tgl[2];
             } else {
-                echo tanggal_indo($tanggal, false); ?>&nbsp; <?php echo ($tanggal !== $tanggal2) ? '-&nbsp;'.tanggal_indo($tanggal2, false) : '';
+                echo  tanggal_indo($tanggal, false); ?>&nbsp; <?php echo ($tanggal !== $tanggal2) ? '-&nbsp;'.tanggal_indo($tanggal2, false) : '';
             }
         } ?></td>
   </tr>
   <tr class="isi">
-    <td valign="top" align="center" style="border-left:1px #000000 solid;border-bottom:1px #000000 solid;">6.</td>
-    <td valign="top" style="border-bottom:1px #000000 solid;">Maksud Mengadakan Perjalanan</td>
-    <td valign="top" style="border-left:1px #000000 solid;border-bottom:1px #000000 solid;">:</td>
-    <td style="border-right:1px #000000 solid;border-bottom:1px #000000 solid;" colspan="7"><?php echo nl2br(stripcslashes($model->untuk)); ?></td>
+    <td valign="top" align="center" class="printbawah printkiri" >6.</td>
+    <td valign="top" class="printbawah" >Maksud Mengadakan Perjalanan</td>
+    <td valign="top" class="printbawah printkiri" >:</td>
+    <td  colspan="7" class="printbawah printkanan"><?php echo nl2br(stripcslashes($model->untuk)); ?></td>
   </tr>
   <tr class="isi">
-    <td valign="top" align="center" style="border-left:1px #000000 solid;border-bottom:1px #000000 solid;">7.</td>
-    <td valign="top" style="border-bottom:1px #000000 solid;">Perhitungan Biaya Perjalanan</td>
-    <td valign="top" style="border-left:1px #000000 solid;border-bottom:1px #000000 solid;">:</td>
-    <td style="border-right:1px #000000 solid;border-bottom:1px #000000 solid;" colspan="7">Atas Beban Sekertariat DPRD Kabupaten Sidoarjo Rekening <?php echo $model->nama_kegiatan.' ( '.$model->rekening.' ) '; ?> </td>
+    <td valign="top" align="center" class="printbawah printkiri" >7.</td>
+    <td valign="top" class="printbawah">Perhitungan Biaya Perjalanan</td>
+    <td valign="top" class="printbawah printkiri" >:</td>
+    <td  colspan="7" class="printbawah printkanan">Atas Beban Sekertariat DPRD Kabupaten Sidoarjo Rekening <?php echo $model->nama_kegiatan.' ( '.$model->rekening.' ) '; ?> </td>
   </tr>
   <tr class="isi">
-    <td valign="top" align="center" >8.</td>
-    <td valign="top" style="">Keterangan</td>
-    <td valign="top">:</td>
-    <td colspan="7" >Surat Perintah No : <?php echo $model->no_spt; ?> </td>
+    <td valign="top" align="center" class="printkiri">8.</td>
+    <td valign="top" >Keterangan</td>
+    <td valign="top" class="printkiri">:</td>
+    <td colspan="7" class="printkanan" >Surat Perintah No : <?php echo $model->no_spt; ?> </td>
   </tr>
   <tr class="isi">
-    <td colspan="2">&nbsp;</td>
-    <td s>&nbsp;</td>
-    <td colspan="7">Tanggal : <?php echo tanggal_indo($model->tgl_surat, false); ?></td>
+    <td colspan="2" class="printbawah printkiri">&nbsp;</td>
+    <td class="printbawah printkiri">&nbsp;</td>
+    <td colspan="7" class="printbawah printkanan">Tanggal : <?php echo tanggal_indo($model->tgl_surat, false); ?></td>
   </tr>
   <tr>
     <td  colspan="10">&nbsp;</td>

@@ -3,7 +3,39 @@
 body {
 	font-family:arial;	
 	}
-.judul {
+	
+.print1 {
+		border-left : 1px solid black;
+		border-top : 1px solid black;
+		border-bottom : 1px solid black;
+	}
+	.printkiri {
+		border-left : 1px solid black;
+	}
+	.printkanan {
+		border-right : 1px solid black;
+	}
+	.printatas{
+		border-top : 1px solid black;
+	}
+	.printbawah{
+		border-bottom : 1px solid black;
+	}
+	.dataprint{
+		page-break-after:always;
+	}
+	.print2 {
+		border-top : 1px solid black;
+	    border-bottom : 1px solid black;
+	}
+	.print3 {
+		border-right : 1px solid black;
+		
+		border-top : 1px solid black;
+		border-bottom : 1px solid black;
+	}
+
+	.judul {
 	font-size:16px;
 	}
 .isi,td{

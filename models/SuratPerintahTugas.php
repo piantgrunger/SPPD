@@ -111,7 +111,7 @@ class SuratPerintahTugas extends \yii\db\ActiveRecord
         $date = new \DateTime($this->tgl_awal);
         $date2 = new \DateTime($this->tgl_akhir);
 
-        return $date->diff($date2)->d;
+        return $date->diff($date2)->d + 1;
     }
 
     public function getDetailSuratPerintahTugas()
