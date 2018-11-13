@@ -111,7 +111,7 @@ function terbilang($x)
     <td align="center" valign="top" class="print1">3.</td>
     <td class="print2" >Jabatan, Pangkat dan Golongan dari yang diperintah</td>
     <td valign="top" style = "" class="print1">:</td>
-    <td colspan="7" valign="top" class="print3" ><?php  echo ($row->status_personil === 'Dewan') ? 'Anggota DPRD' : $row->pangkat; ?>&nbsp;/ <?php echo $row->jenis; ?>&nbsp;</td>
+    <td colspan="7" valign="top" class="print3" ><?php  echo ($row->status_personil === 'Dewan') ? 'Anggota DPRD Kabupaten Sidoarjo' : $row->pangkat; ?>&nbsp;/ <?php echo $row->jenis; ?>&nbsp;</td>
   </tr>
   <tr class="isi">
     <td width="25" align="center" valign="top" class="printkiri" >4.</td>
