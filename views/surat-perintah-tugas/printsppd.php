@@ -97,26 +97,26 @@ function terbilang($x)
     <td colspan="7">&nbsp;</td>
   </tr>
   <tr class="isi" >
-    <td align="center" valign="top" class="print1" >1.</td>
-    <td valign="top"  class="print2">Pejabat yang memberi perintah</td>
-    <td class="print1" >: </td    ><td colspan="7"  class="print3"><?php echo $model->penanda_tangan; ?></td>
+    <td align="center" valign="top" class="printatas printkiri" >1.</td>
+    <td valign="top"  class="printatas">Pejabat yang memberi perintah</td>
+    <td class="printatas printkiri" >: </td    ><td colspan="7"  class="printatas printkanan"><?php echo $model->penanda_tangan; ?></td>
   </tr>            
   <tr class="isi">
-    <td align="center"  valign="top" class="print1" >2.</td>
-    <td  class="print2">Nama / NIP Pegawai yang Diperintah mengadakan perjalanan dinas</td>
-    <td valign="top" class="print1">: </td>
-    <td colspan="7" valign="top" class="print3"><?php echo $row->nama_personil; ?> &nbsp;/&nbsp;<?php echo $row->nip; ?> </td>
+    <td align="center"  valign="top" class="printkiri printatas" >2.</td>
+    <td  class="printatas">Nama / NIP Pegawai yang Diperintah mengadakan perjalanan dinas</td>
+    <td valign="top" class="printkiri printatas">: </td>
+    <td colspan="7" valign="top" class="printatas printkanan"><?php echo $row->nama_personil; ?> &nbsp;/&nbsp;<?php echo $row->nip; ?> </td>
   </tr>
   <tr class="isi">
-    <td align="center" valign="top" class="print1">3.</td>
-    <td class="print2" >Jabatan, Pangkat dan Golongan dari yang diperintah</td>
-    <td valign="top" style = "" class="print1">:</td>
-    <td colspan="7" valign="top" class="print3" ><?php  echo ($row->status_personil === 'Dewan') ? 'Anggota DPRD Kabupaten Sidoarjo' : $row->pangkat; ?>&nbsp;/ <?php echo $row->jenis; ?>&nbsp;</td>
+    <td align="center" valign="top" class="printatas printkiri">3.</td>
+    <td class="printatas" >Jabatan, Pangkat dan Golongan dari yang diperintah</td>
+    <td valign="top" style = "" class="printatas printkiri">:</td>
+    <td colspan="7" valign="top" class="printatas printkanan printbawah" ><?php  echo ($row->status_personil === 'Dewan') ? 'Anggota DPRD Kabupaten Sidoarjo' : $row->pangkat; ?>&nbsp;/ <?php echo $row->jenis; ?>&nbsp;</td>
   </tr>
   <tr class="isi">
-    <td width="25" align="center" valign="top" class="printkiri" >4.</td>
-    <td valign="top" width="266" >Perjalanan Dinas Diperintahkan</td>
-    <td valign="top" class="printkiri" >:  </td>
+    <td width="25" align="center" valign="top" class="printkiri printatas" >4.</td>
+    <td valign="top" width="266" class="printatas">Perjalanan Dinas Diperintahkan</td>
+    <td valign="top" class="printkiri printatas" >:  </td>
     <td width="32" valign="middle">Dari </td>
     <td colspan="1">: Sidoarjo</td>
     <td colspan="5" class="printkanan">&nbsp;</td>
