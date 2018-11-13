@@ -164,6 +164,38 @@ class SuratPerintahTugasController extends Controller
      *
      * @return mixed
      */
+    public function actionPrintRealisasi($id)
+    {
+        $content = $this->renderPartial('printrealisasi', [
+            'model' => $this->findModel($id),
+            'mode' => 1,
+        ]);
+        // setup kartik\mpdf\Pdf component
+        $pdf = new Pdf([
+   // set to use core fonts only
+            'mode' => Pdf::MODE_UTF8,
+   // A4 paper format
+            'format' => Pdf::FORMAT_A4,
+   // portrait orientation
+            'orientation' => Pdf::ORIENT_PORTRAIT,
+   // stream to browser inline
+            'destination' => Pdf::DEST_BROWSER,
+   // your html content input
+            'content' => $content,
+   // format content from your own css file if needed or use the
+   // enhanced bootstrap css built by Krajee for mPDF formatting
+            'cssFile' => '@app/web/css/print.css',
+        'defaultFont' => 'Arial',
+   // any css to be embedded if required
+            'cssInline' => '.kv-heading-1{font-size:18px}',
+    // set mPDF properties on the fly
+            'options' => ['title' => 'Cetak SPT '],
+    // call mPDF methods on the fly
+        ]);
+
+        return $pdf->render();
+    }
+
     public function actionPrint1($id)
     {
         $content = $this->renderPartial('printspt', [

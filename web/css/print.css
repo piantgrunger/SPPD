@@ -9,6 +9,9 @@ body {
 		border-top : 1px solid black;
 		border-bottom : 1px solid black;
 	}
+	.abu{
+		background-color: darkgrey;
+	}
 	.printkiri {
 		border-left : 1px solid black;
 	}
