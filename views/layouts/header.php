@@ -39,6 +39,7 @@ $menuItems =
                 ['label' => 'Mapping Alat Kelengkapan', 'icon' => ' fa fa-circle-o', 'url' => ['/alat-kelengkapan/index-mapping'], 'visible' => !Yii::$app->user->isGuest],
                 ['label' => 'Surat Perintah Tugas', 'icon' => ' fa fa-circle-o', 'url' => ['/surat-perintah-tugas/index'], 'visible' => !Yii::$app->user->isGuest],
                 ['label' => 'Surat Perintah Perjalanan Dinas', 'icon' => ' fa fa-circle-o', 'url' => ['/surat-perintah-tugas/index-sppd'], 'visible' => !Yii::$app->user->isGuest],
+                ['label' => 'Kwitansi', 'icon' => ' fa fa-circle-o', 'url' => ['/surat-perintah-tugas/index-kwitansi'], 'visible' => !Yii::$app->user->isGuest],
             ],
         ],
             ];

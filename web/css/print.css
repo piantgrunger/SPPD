@@ -27,6 +27,9 @@ body {
 	.dataprint{
 		page-break-after:always;
 	}
+	.divprint{
+		page-break-inside: avoid;
+	}
 	.print2 {
 		border-top : 1px solid black;
 	    border-bottom : 1px solid black;
