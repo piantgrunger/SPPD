@@ -57,7 +57,7 @@ class SuratPerintahTugas extends \yii\db\ActiveRecord
             'id_spt' => Yii::t('app', 'Id Spt'),
             'no_spt' => Yii::t('app', 'No Spt'),
             'tgl_surat' => Yii::t('app', 'Tgl Surat'),
-            'id_alat_kelengkapan' => Yii::t('app', 'Id Alat Kelengkapan'),
+            'id_alat_kelengkapan' => Yii::t('app', 'Alat Kelengkapan'),
             'untuk' => Yii::t('app', 'Untuk'),
             'tujuan' => Yii::t('app', 'Tujuan'),
             'zona' => Yii::t('app', 'Zona'),

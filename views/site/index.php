@@ -73,6 +73,10 @@ $this->registerJSFile(Yii::$app->homeUrl.'js/start.js', ['depends' => [yii\web\J
         <span class='fa fa-envelope-o  icon'></span>
         <span class='branding-bar'>Kwitansi</span>
          ", ['/surat-perintah-tugas/index-kwitansi'], ['data-role' => 'tile', 'class ' => 'bg-green', 'data-effect' => 'animate-slide-up']) : ''; ?>
+<?= (Mimin::checkRoute('laporan/index')) ? Html::a("
+        <span class='fa fa-list  icon'></span>
+        <span class='branding-bar'>Laporan</span>
+         ", ['/laporan'], ['data-role' => 'tile', 'class ' => 'bg-green', 'data-effect' => 'animate-slide-up']) : ''; ?>
 
 </div>
 </div>

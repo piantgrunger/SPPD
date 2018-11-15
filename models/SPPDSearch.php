@@ -2,29 +2,30 @@
 
 namespace app\models;
 
-use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\SuratPerintahTugas;
 
 /**
  * SuratPerintahTugasSearch represents the model behind the search form of `app\models\SuratPerintahTugas`.
  */
 class SPPDSearch extends SuratPerintahTugas
 {
+    public $tgl_aw;
+    public $tgl_ak;
+
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function rules()
     {
         return [
             [['id_spt', 'id_alat_kelengkapan'], 'integer'],
-            [['no_spt', 'tgl_surat', 'untuk', 'tujuan', 'zona', 'tgl_awal', 'tgl_akhir', 'penanda_tangan'], 'safe'],
+            [['no_spt', 'tgl_surat', 'untuk', 'tujuan', 'zona', 'tgl_awal', 'tgl_akhir', 'penanda_tangan', 'tgl_aw', 'tgl_ak'], 'safe'],
         ];
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function scenarios()
     {
@@ -33,13 +34,13 @@ class SPPDSearch extends SuratPerintahTugas
     }
 
     /**
-     * Creates data provider instance with search query applied
+     * Creates data provider instance with search query applied.
      *
      * @param array $params
      *
      * @return ActiveDataProvider
      */
-    public function search($params, $SPPD=0)
+    public function search($params, $SPPD = 0)
     {
         $query = SuratPerintahTugas::find();
 
@@ -71,11 +72,14 @@ class SPPDSearch extends SuratPerintahTugas
             ->andFilterWhere(['like', 'tujuan', $this->tujuan])
             ->andFilterWhere(['like', 'zona', $this->zona])
             ->andFilterWhere(['like', 'penanda_tangan', $this->penanda_tangan]);
-        if ($SPPD===0) {
-            $query->andWhere("id_kegiatan is null");
+        if ($SPPD === 0) {
+            $query->andWhere('id_kegiatan is null');
         } else {
-            $query->andWhere("id_kegiatan is not null");
+            $query->andWhere('id_kegiatan is not null');
         }
+
+        $query->andFilterWhere(['between', 'tgl_surat', $this->tgl_aw, $this->tgl_ak]);
+
         return $dataProvider;
     }
 }

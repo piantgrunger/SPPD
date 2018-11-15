@@ -74,7 +74,7 @@ $data5 = ArrayHelper::map(
         ],
     ]); ?>
     <?= $form->field($model, 'kendaraan')->widget(Select2::className(), [
-          'data' =>$data5,
+          'data' => $data5,
 
         'options' => ['placeholder' => 'Pilih Kendaraan...'],
         'pluginOptions' => [
