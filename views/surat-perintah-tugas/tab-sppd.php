@@ -18,8 +18,25 @@ $gridColumns = [
     'penanda_tangan',
 
     [
-        'class' => 'kartik\grid\ActionColumn', 'template' => '{sppd} {sppd2} {sppd3} {realisasi}',
+        'class' => 'kartik\grid\ActionColumn', 'template' => ' {koreksi} {sppd} {sppd2} {sppd3} {realisasi}',
         'buttons' => [
+
+
+            'koreksi' => function ($url, $model) {
+                if (Mimin::checkRoute($this->context->id . '/sppd')) {
+                    return
+                        Html::a(
+                        'Koreksi',
+                        ['sppd', 'id' => $model->id_spt],
+                        [
+                            'class' => 'btn btn-success'
+
+                        ]
+                    );
+                } else {
+                    return ' ';
+                }
+            },
             'sppd' => function ($url, $model) {
                 if (Mimin::checkRoute($this->context->id.'/print-sppd1')) {
                     return
