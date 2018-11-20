@@ -27,6 +27,44 @@ class SuratPerintahTugas extends \yii\db\ActiveRecord
     /**
      * {@inheritdoc}
      */
+    public function tanggal_indo($tanggal, $cetak_hari = false)
+    {
+        $hari = array(
+            1 => 'Senin',
+            'Selasa',
+            'Rabu',
+            'Kamis',
+            'Jumat',
+            'Sabtu',
+            'Minggu',
+        );
+
+        $bulan = array(
+            1 => 'Januari',
+            'Februari',
+            'Maret',
+            'April',
+            'Mei',
+            'Juni',
+            'Juli',
+            'Agustus',
+            'September',
+            'Oktober',
+            'November',
+            'Desember',
+        );
+        $split = explode('-', $tanggal);
+        $tgl_indo = $split[2] . ' ' . $bulan[(int)$split[1]] . ' ' . $split[0];
+
+        if ($cetak_hari) {
+            $num = date('N', strtotime($tanggal));
+
+            return $hari[$num] . ', ' . $tgl_indo;
+        }
+
+        return $tgl_indo;
+    }
+
     public static function tableName()
     {
         return 'tb_mt_spt';
@@ -120,8 +158,57 @@ class SuratPerintahTugas extends \yii\db\ActiveRecord
         ->orderBy([new \yii\db\Expression('FIELD (jenis, "Ketua DPRD", "Wakil Ketua DPRD", "Ketua","Wakil Ketua","Sekretaris","Anggota","Staff")')]);
     }
 
+
+    public function getSubSuratPerintahTugas()
+    {
+        return $this->hasMany(SubSuratPerintahTugas::className(), ['id_spt' => 'id_spt']);
+    }
+    public function getTotal_realisasi()
+    {
+        return is_null($this->subSuratPerintahTugas)?0: $this->hasMany(SubSuratPerintahTugas::className(), ['id_spt' => 'id_spt'])->sum('realisasi');
+    }
+
     public function setDetailSuratPerintahTugas($value)
     {
         return $this->loadRelated('detailSuratPerintahTugas', $value);
+    }
+
+
+    public function getTanggalCetak()
+    {
+        $tanggal = $this->tgl_awal;
+        $tanggal2 = $this->tgl_akhir;
+        $tgl = explode(' ', $this->tanggal_indo($tanggal, false));
+        $tgl2 = explode(' ', $this->tanggal_indo($tanggal2, false));
+
+        if ($tgl[1] !== $tgl2[1]) {
+            return $this->tanggal_indo($tanggal, false) ."&nbsp;". ($tanggal !== $tanggal2) ? '-&nbsp;'.$this->tanggal_indo($tanggal2, false) : '';
+        } else {
+            if ($tgl[0] !== $tgl2[0]) {
+                return $tgl[0].' - '.$tgl2[0].'  '.$tgl[1].'  '.$tgl[2];
+            } else {
+                return  $this->tanggal_indo($tanggal, false)."&nbsp;". ($tanggal !== $tanggal2) ? '-&nbsp;'.$this->tanggal_indo($tanggal2, false) : '';
+            }
+        }
+    }
+
+    public function getHariCetak()
+    {
+        $tglHari = $this->tgl_awal;
+        $tglHari2 = $this->tgl_akhir;
+        $day = date('D', strtotime($tglHari));
+        $day2 = date('D', strtotime($tglHari2));
+        //echo $day;
+        $daftarHari = array(
+            'Sun' => 'Minggu',
+            'Mon' => 'Senin',
+            'Tue' => 'Selasa',
+            'Wed' => 'Rabu',
+            'Thu' => 'Kamis',
+            'Fri' => 'Jumat',
+            'Sat' => 'Sabtu',
+        );
+
+        return $daftarHari[$day] . (($tglHari !== $tglHari2) ? ' - ' . $daftarHari[$day2] :"");
     }
 }

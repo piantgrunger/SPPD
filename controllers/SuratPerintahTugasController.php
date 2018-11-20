@@ -219,7 +219,7 @@ class SuratPerintahTugasController extends Controller
             'mode' => Pdf::MODE_UTF8,
    // A4 paper format
             'format' => Pdf::FORMAT_LEGAL,
-   // portrait orientation
+   // portrait orientatiopn
             'orientation' => Pdf::ORIENT_PORTRAIT,
    // stream to browser inline
             'destination' => Pdf::DEST_BROWSER,
