@@ -23,7 +23,7 @@ $gridColumns = [
          'format' => 'html',
         'contentOptions' => ['style' => 'width:300px; white-space: normal;'],
           'value' => function ($model) {
-              return Html::tag('div', "Melakukan $model->untuk <br> Pada  : <br>  Hari :$model->hariCetak <br> Tanggal : $model->tanggalCetak <br> Tempat :$model->tujuan ", [
+              return Html::tag('div', " $model->untuk <br> Pada  : <br>  Hari :$model->hariCetak <br> Tanggal : $model->tanggalCetak <br> Tempat :$model->tujuan ", [
                 'style' => "word-wrap:break-word;"
             ]);
           },
