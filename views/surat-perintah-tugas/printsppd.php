@@ -3,7 +3,7 @@ use yii\helpers\Url;
 
 ?>
 
-<?php 
+<?php
         function tanggal_indo($tanggal, $cetak_hari = false)
         {
             $hari = array(1 => 'Senin',
@@ -65,17 +65,17 @@ function terbilang($x)
 
 <?php
     foreach ($model->detailSuratPerintahTugas as $key => $row) {
-        //echo $row["nama_personil"]."<br/>---<br/>";?>    
- 
+        //echo $row["nama_personil"]."<br/>---<br/>";?>
 
-   
- 
+
+
+
 
 <table class="dataprint"  autosize="1" width="722" height="822" border="0" cellpadding="5" cellspacing="0" >
 
 <tr>
     <td width="715" height="56" colspan="10" align="left" valign="top" style="font-family:Arial, Helvetica, sans-serif; font-size:19px"><img src="<?=Url::to(['/Image/Kop'.$mode.'.png']); ?>" width="100%" height="145" /></td>
-    
+
   </tr>
   <tr>
     <td colspan="10" align="center">&nbsp;</td>
@@ -100,7 +100,7 @@ function terbilang($x)
     <td align="center" valign="top" class="printatas printkiri" >1.</td>
     <td valign="top"  class="printatas">Pejabat yang memberi perintah</td>
     <td class="printatas printkiri" >: </td    ><td colspan="7"  class="printatas printkanan"><?php echo $model->penanda_tangan; ?></td>
-  </tr>            
+  </tr>
   <tr class="isi">
     <td align="center"  valign="top" class="printkiri printatas" >2.</td>
     <td  class="printatas">Nama / NIP Pegawai yang Diperintah mengadakan perjalanan dinas</td>
@@ -111,15 +111,15 @@ function terbilang($x)
     <td align="center" valign="top" class="printatas printkiri">3.</td>
     <td class="printatas" >Jabatan, Pangkat dan Golongan dari yang diperintah</td>
     <td valign="top" style = "" class="printatas printkiri">:</td>
-    <td colspan="7" valign="top" class="printatas printkanan printbawah" ><?php  echo ($row->status_personil === 'Dewan') ? 'Anggota DPRD Kabupaten Sidoarjo' : $row->pangkat; ?>&nbsp;/ <?php echo $row->jenis; ?>&nbsp;</td>
+    <td colspan="7" valign="top" class="printatas printkanan" ><?php  echo ($row->status_personil === 'Dewan') ? 'Anggota DPRD Kabupaten Sidoarjo' : $row->pangkat; ?>&nbsp;/ <?php echo $row->jenis; ?>&nbsp;</td>
   </tr>
   <tr class="isi">
     <td width="25" align="center" valign="top" class="printkiri printatas" >4.</td>
     <td valign="top" width="266" class="printatas">Perjalanan Dinas Diperintahkan</td>
     <td valign="top" class="printkiri printatas" >:  </td>
-    <td width="32" valign="middle">Dari </td>
-    <td colspan="1">: Sidoarjo</td>
-    <td colspan="5" class="printkanan">&nbsp;</td>
+    <td width="32" valign="middle" class ="printatas">Dari </td>
+    <td colspan="1" class ="printatas">: Sidoarjo</td>
+    <td colspan="5" class="printkanan printatas">&nbsp;</td>
   </tr>
   <tr class="isi">
     <td class="printkiri" >&nbsp;</td>
@@ -139,7 +139,7 @@ function terbilang($x)
     <td valign="top" class="printatas" >Perjalanan Dinas direncanakan</td>
     <td valign="top"  class="printkiri printatas">:</td>
     <td colspan="7"  class="printatas printkanan">Selama : <?php echo $model->selisih; ?> ( <?php $angka = $model->selisih;
-        echo terbilang($angka); ?> ) Hari</td>	
+        echo terbilang($angka); ?> ) Hari</td>
   </tr>
   <tr class="isi">
     <td class="printkiri printbawah" >&nbsp;</td>
@@ -234,7 +234,7 @@ function terbilang($x)
   <tr>
     <td colspan="10">&nbsp;</td>
   </tr>
-  
+
   <tr class="isi">
     <td colspan="2" >&nbsp;</td>
     <td>&nbsp;</td>
