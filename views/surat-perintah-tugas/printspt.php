@@ -16,7 +16,7 @@ use yii\helpers\Url;
   </tr>
   <tr>
     <td height="22" colspan="3" align="center" class="judul">&nbsp;</td>
-    <td height="22" colspan="8" align="center" class="judul"><strong><u>SURAT PERINTAH TUGAS</u> </strong></td>
+    <td height="22" colspan="8" align="center" class="judul"><b><u>SURAT PERINTAH TUGAS</u> </b></td>
     <td height="22" colspan="3" align="center" class="judul">&nbsp;</td>
 
   </tr>
@@ -42,7 +42,7 @@ use yii\helpers\Url;
     <td colspan="13" align="center">&nbsp;</td>
   </tr>
   <tr>
-    <td height="22" colspan="13" align="center" class="judul"><strong>MEMERINTAHKAN</strong></td>
+    <td height="22" colspan="13" align="center" class="judul"><b>MEMERINTAHKAN</b></td>
   </tr>
   <tr>
     <td height="22" colspan="13" align="center" class="judul">&nbsp;</td>
@@ -125,11 +125,11 @@ use yii\helpers\Url;
 
     ?>
     </div>
-    <div style="float:left">   <?= $daftarHari[$day]; ?> <?php echo ($tglHari !== $tglHari2) ? '&nbsp;-'.$daftarHari[$day2] : ''; ?></div></td>
+    <div style="float:left">   <?= $daftarHari[$day]; ?> <?php echo ($tglHari !== $tglHari2) ? '&nbsp;-&nbsp;'.$daftarHari[$day2] : ''; ?></div></td>
   </tr>
   <tr class = "isi">
     <td height="18" colspan="3">&nbsp;</td>
-    <td colspan="2">tgl</td>
+    <td colspan="2">Tanggal</td>
     <td width="5">:</td>
     <td colspan="13" align="left">
       <div style="float:left">
@@ -274,10 +274,12 @@ use yii\helpers\Url;
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
+      <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
-    <td colspan="5" align="right"> <?=strtoupper($model->penandatangan->nama_pangkat); ?>  DEWAN PERWAKILAN RAKYAT DAERAH</td>
+    <td>&nbsp;</td>
+    <td colspan="6" align="right"> <?=$titel; ?></td>
   </tr>
   <tr style="font-size:9px">
     <td height="16">&nbsp;</td>
@@ -288,7 +290,7 @@ use yii\helpers\Url;
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
-    <td colspan="5" align="right">KABUPATEN SIDOARJO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td colspan="7" align="right">KABUPATEN SIDOARJO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
   </tr>
   <tr style="font-size:9px">
     <td>&nbsp;</td>
@@ -299,7 +301,7 @@ use yii\helpers\Url;
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
-    <td colspan="5" align="right">&nbsp;</td>
+    <td colspan="7" align="right">&nbsp;</td>
   </tr>
   <tr style="font-size:9px">
     <td>&nbsp;</td>
@@ -310,7 +312,7 @@ use yii\helpers\Url;
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
-    <td colspan="5" align="right">&nbsp;</td>
+    <td colspan="7" align="right">&nbsp;</td>
   </tr>
   <tr style="font-size:9px">
     <td>&nbsp;</td>
@@ -321,7 +323,7 @@ use yii\helpers\Url;
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
-    <td colspan="5" align="right">&nbsp;</td>
+    <td colspan="7" align="right">&nbsp;</td>
   </tr>
   <tr style="font-size:9px">
     <td>&nbsp;</td>
@@ -332,7 +334,7 @@ use yii\helpers\Url;
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
-    <td colspan="5" align="right"><?php echo $model->penanda_tangan; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td colspan="7" align="right"><?php echo $model->penanda_tangan; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
   </tr>
   
 </table>

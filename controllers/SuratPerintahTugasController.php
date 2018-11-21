@@ -244,6 +244,7 @@ class SuratPerintahTugasController extends Controller
         $content = $this->renderPartial('printspt', [
             'model' => $this->findModel($id),
             'mode' => 1,
+            'titel' => 'KETUA DEWAN PERWAKILAN RAKYAT DAERAH',
         ]);
         // setup kartik\mpdf\Pdf component
         $pdf = new Pdf([
@@ -276,6 +277,7 @@ class SuratPerintahTugasController extends Controller
         $content = $this->renderPartial('printsppd', [
             'model' => $this->findModel($id),
             'mode' => 1,
+            'titel' => 'KETUA DEWAN PERWAKILAN RAKYAT DAERAH',
         ]);
         // setup kartik\mpdf\Pdf component
         $pdf = new Pdf([
@@ -308,6 +310,7 @@ class SuratPerintahTugasController extends Controller
         $content = $this->renderPartial('printsppd', [
             'model' => $this->findModel($id),
             'mode' => 2,
+            'titel' => 'SEKRETARIS DEWAN PERWAKILAN RAKYAT DAERAH',
         ]);
         // setup kartik\mpdf\Pdf component
         $pdf = new Pdf([
@@ -340,6 +343,7 @@ class SuratPerintahTugasController extends Controller
         $content = $this->renderPartial('printsppd', [
             'model' => $this->findModel($id),
             'mode' => 3,
+            'titel' => 'SEKRETARIS DAERAH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;',
         ]);
         // setup kartik\mpdf\Pdf component
         $pdf = new Pdf([
@@ -372,6 +376,7 @@ class SuratPerintahTugasController extends Controller
         $content = $this->renderPartial('printspt', [
             'model' => $this->findModel($id),
             'mode' => 2,
+            'titel' => 'SEKRETARIS DEWAN PERWAKILAN RAKYAT DAERAH',
         ]);
         // setup kartik\mpdf\Pdf component
         $pdf = new Pdf([
@@ -404,6 +409,7 @@ class SuratPerintahTugasController extends Controller
         $content = $this->renderPartial('printspt', [
             'model' => $this->findModel($id),
             'mode' => 3,
+            'titel' => 'SEKRETARIS DAERAH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;',
         ]);
         // setup kartik\mpdf\Pdf component
         $pdf = new Pdf([

@@ -81,10 +81,10 @@ function terbilang($x)
     <td colspan="10" align="center">&nbsp;</td>
   </tr>
   <tr>
-    <td class="judul" colspan="10" align="center"><strong>Surat Perintah Perjalanan Dinas</strong></td>
+    <td class="judul" colspan="10" align="center"><b>Surat Perintah Perjalanan Dinas</b></td>
   </tr>
   <tr>
-    <td class="judul" colspan="10" align="center"><strong>(S P P D)</strong></td>
+    <td class="judul" colspan="10" align="center"><b>(S P P D)</b></td>
   </tr>
   <tr>
     <td colspan="2"></td>
@@ -220,7 +220,7 @@ function terbilang($x)
     <td colspan="2" >&nbsp;</td>
     <td>&nbsp;</td>
     <td  >&nbsp;</td>
-    <td colspan="7" align="center"><?=strtoupper($model->penandatangan->nama_pangkat); ?> DEWAN PERWAKILAN RAKYAT DAERAH</td>
+    <td colspan="7" align="center"><?=$titel; ?></td>
   </tr>
   <tr class="isi">
     <td colspan="2" >&nbsp;</td>

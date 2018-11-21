@@ -1,7 +1,8 @@
 @charset "utf-8";
 /* CSS Document */
 body {
-	font-family:arial;	
+	font-family: 'Arial Narrow' ;	
+	font-size: 12px;
 	}
 	
 .print1 {
@@ -42,7 +43,7 @@ body {
 	}
 
 	.judul {
-	font-size:16px;
+	font-size:14px;
 	}
 .isi,td{
 	font-size:14px;
