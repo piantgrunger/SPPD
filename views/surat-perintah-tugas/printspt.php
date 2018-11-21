@@ -158,7 +158,7 @@ use yii\helpers\Url;
     function tanggal_indo($tgl, $cetak_hari = false)
     {
         if (is_null($tgl)) {
-            echo ' ';
+            return ' ';
         } else {
             $hari = array(1 => 'Senin',
                 'Selasa',
@@ -195,7 +195,6 @@ use yii\helpers\Url;
             return $tgl_indo;
         }
         $tgl = date('Y-m-d', strtotime($model->tgl_awal));
-
         $tglSurat = date('Y-m-d', strtotime($model->tgl_surat));
         $tglDoang = date('d', strtotime($model->tgl_awal));
         $tgl2 = date('Y-m-d', strtotime($model->tgl_akhir));
@@ -255,7 +254,7 @@ use yii\helpers\Url;
   </tr>
   <tr class = "isi">
     <td height="18" colspan="11" align="right">Pada tanggal&nbsp;</td>
-    <td colspan="2">:&nbsp;<?php echo  is_null($model->tgl_surat) ? '' : tanggal_indo($tglSurat, false); ?></td>
+    <td colspan="2">:&nbsp;<?php echo tanggal_indo($tglSurat, false); ?></td>
   </tr>
   <tr>
     <td>&nbsp;</td>
@@ -281,7 +280,7 @@ use yii\helpers\Url;
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
-    <td colspan="5" align="right"> <td colspan="7" align="center"><?=strtoupper($model->penandatangan->nama_pangkat); ?> DEWAN PERWAKILAN RAKYAT DAERAH</td>
+    <td colspan="5" align="right"> <?=strtoupper($model->penandatangan->nama_pangkat); ?>  DEWAN PERWAKILAN RAKYAT DAERAH</td>
   </tr>
   <tr style="font-size:9px">
     <td height="16">&nbsp;</td>
