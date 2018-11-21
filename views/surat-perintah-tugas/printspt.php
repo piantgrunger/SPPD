@@ -125,7 +125,7 @@ use yii\helpers\Url;
 
     ?>
     </div>
-    <div style="float:left">   <?= $daftarHari[$day]; ?> <?php echo ($tglHari !== $tglHari2) ? '&nbsp;-&nbsp;'.$daftarHari[$day2] : ''; ?></div></td>
+    <div style="float:left">   <?= $daftarHari[$day]; ?> <?php echo ($tglHari !== $tglHari2) ? '&nbsp;- &nbsp;&nbsp;'.$daftarHari[$day2] : ''; ?></div></td>
   </tr>
   <tr class = "isi">
     <td height="18" colspan="3">&nbsp;</td>
@@ -219,7 +219,7 @@ use yii\helpers\Url;
             if ($tgl[0] !== $tgl2[0]) {
                 echo $tgl[0].' - '.$tgl2[0].'  '.$tgl[1].'  '.$tgl[2];
             } else {
-                echo tanggal_indo($tanggal, false); ?>&nbsp; <?php echo ($tanggal !== $tanggal2) ? '-&nbsp;'.tanggal_indo($tanggal2, false) : '';
+                echo tanggal_indo($tanggal, false); ?>&nbsp; <?php echo ($tanggal !== $tanggal2) ? ' -  &nbsp;'.tanggal_indo($tanggal2, false) : '';
             }
         }
        ?>
@@ -250,7 +250,7 @@ use yii\helpers\Url;
     <td colspan="2">:&nbsp;S I D O A R J O</td>
   </tr>
   <tr class = "isi">
-    <td height="18" colspan="11" align="right">Pada tanggal&nbsp;</td>
+    <td height="18" colspan="11" align="right">Pada tanggal&nbsp;&nbsp;&nbsp;</td>
     <td colspan="2">:&nbsp;<?php echo  is_null($model->tgl_surat) ? '' : tanggal_indo($tglSurat, false); ?></td>
   </tr>
   <tr>
