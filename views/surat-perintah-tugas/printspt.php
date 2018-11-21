@@ -157,7 +157,10 @@ use yii\helpers\Url;
         //echo date('d', strtotime($model->tgl_akhir)).'  '.(ucfirst($bulan[date('m')])).'  '.date('Y');
     function tanggal_indo($tgl, $cetak_hari = false)
     {
-        $hari = array(1 => 'Senin',
+        if (is_null($tgl)) {
+            echo ' ';
+        } else {
+            $hari = array(1 => 'Senin',
                 'Selasa',
                 'Rabu',
                 'Kamis',
@@ -166,7 +169,7 @@ use yii\helpers\Url;
                 'Minggu',
             );
 
-        $bulan = array(1 => 'Januari',
+            $bulan = array(1 => 'Januari',
                 'Februari',
                 'Maret',
                 'April',
@@ -179,39 +182,39 @@ use yii\helpers\Url;
                 'November',
                 'Desember',
             );
-        $split = explode('-', $tgl);
-        //      echo "tgl:". $tgl ."##";
-        $tgl_indo = $split[2].' '.$bulan[(int) $split[1]].' '.$split[0];
+            $split = explode('-', $tgl);
+            //      echo "tgl:". $tgl ."##";
+            $tgl_indo = $split[2].' '.$bulan[(int) $split[1]].' '.$split[0];
 
-        if ($cetak_hari) {
-            $num = date('N', strtotime($tgl));
+            if ($cetak_hari) {
+                $num = date('N', strtotime($tgl));
 
-            return $hari[$num].', '.$tgl_indo;
+                return $hari[$num].', '.$tgl_indo;
+            }
+
+            return $tgl_indo;
         }
+        $tgl = date('Y-m-d', strtotime($model->tgl_awal));
 
-        return $tgl_indo;
-    }
-$tgl = date('Y-m-d', strtotime($model->tgl_awal));
-$tglSurat = date('Y-m-d', strtotime($model->tgl_surat));
-$tglDoang = date('d', strtotime($model->tgl_awal));
-$tgl2 = date('Y-m-d', strtotime($model->tgl_akhir));
-$bulanSaja1 = date('m', strtotime($model->tgl_awal));
-$bulanSaja2 = date('m', strtotime($model->tgl_akhir));
-/*
-if ($bulanSaja1 == $bulanSaja2) {
-    $batas = tgl_indo($tglDoang, false);
-} else {
-    $batas = tgl_indo($tgl, false);
-}
-*/
-//echo "Batas:". $batas;
-    ?>
+        $tglSurat = date('Y-m-d', strtotime($model->tgl_surat));
+        $tglDoang = date('d', strtotime($model->tgl_awal));
+        $tgl2 = date('Y-m-d', strtotime($model->tgl_akhir));
+        $bulanSaja1 = date('m', strtotime($model->tgl_awal));
+        $bulanSaja2 = date('m', strtotime($model->tgl_akhir));
+        /*
+        if ($bulanSaja1 == $bulanSaja2) {
+            $batas = tgl_indo($tglDoang, false);
+        } else {
+            $batas = tgl_indo($tgl, false);
+        }
+        */
+        //echo "Batas:". $batas;?>
       </div>
       <div style="float:left"><?php
       $tanggal = $model->tgl_awal;
-      $tanggal2 = $model->tgl_akhir;
-      $tgl = explode(' ', tanggal_indo($tanggal, false));
-      $tgl2 = explode(' ', tanggal_indo($tanggal2, false));
+        $tanggal2 = $model->tgl_akhir;
+        $tgl = explode(' ', tanggal_indo($tanggal, false));
+        $tgl2 = explode(' ', tanggal_indo($tanggal2, false));
 
         if ($tgl[1] !== $tgl2[1]) {
             echo tanggal_indo($tanggal, false); ?>&nbsp; <?php echo ($tanggal !== $tanggal2) ? '-&nbsp;'.tanggal_indo($tanggal2, false) : '';
@@ -222,6 +225,7 @@ if ($bulanSaja1 == $bulanSaja2) {
                 echo tanggal_indo($tanggal, false); ?>&nbsp; <?php echo ($tanggal !== $tanggal2) ? '-&nbsp;'.tanggal_indo($tanggal2, false) : '';
             }
         }
+    }
        ?>
     </div></td>
   </tr>
@@ -251,7 +255,7 @@ if ($bulanSaja1 == $bulanSaja2) {
   </tr>
   <tr class = "isi">
     <td height="18" colspan="11" align="right">Pada tanggal&nbsp;</td>
-    <td colspan="2">:&nbsp;<?php echo tanggal_indo($tglSurat, false); ?></td>
+    <td colspan="2">:&nbsp;<?php echo  is_null($model->tgl_surat) ? '' : tanggal_indo($tglSurat, false); ?></td>
   </tr>
   <tr>
     <td>&nbsp;</td>
