@@ -185,7 +185,7 @@ function terbilang($x)
   <tr class="isi">
     <td colspan="2" class="printbawah printkiri">&nbsp;</td>
     <td class="printbawah printkiri">&nbsp;</td>
-    <td colspan="7" class="printbawah printkanan">Tanggal : <?php echo  is_null($model->tgl_surat) ? '' : tanggal_indo($tglSurat, false); ?></td>
+    <td colspan="7" class="printbawah printkanan">Tanggal : <?php echo  is_null($model->tgl_surat) ? '' : tanggal_indo($model->tgl_surat, false); ?></td>
   </tr>
   <tr>
     <td  colspan="10">&nbsp;</td>
@@ -205,7 +205,7 @@ function terbilang($x)
     <td align="left">Pada Tanggal</td>
     <td align="center">:</td>
     <td>
-         <?php echo  is_null($model->tgl_surat) ? '' : tanggal_indo($tglSurat, false); ?>
+         <?php echo  is_null($model->tgl_surat) ? '' : tanggal_indo($model->tgl_surat, false); ?>
     </td>
   </tr>
   <tr>
