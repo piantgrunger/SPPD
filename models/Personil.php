@@ -36,7 +36,7 @@ class Personil extends \yii\db\ActiveRecord
     {
         return [
             [['nip', 'nama_personil', 'status_personil', 'status'], 'required'],
-            [['status_personil', 'golongan'], 'string'],
+            [['status_personil', 'golongan', 'jabatan'], 'string'],
             [['id_pangkat', 'setuju', 'mengetahui', 'lunas', 'tanda_tangan_surat'], 'integer'],
             [['nip', 'nama_personil'], 'string', 'max' => 50],
             [['id_pangkat'], 'exist', 'skipOnError' => true, 'targetClass' => Pangkat::className(), 'targetAttribute' => ['id_pangkat' => 'id_pangkat']],

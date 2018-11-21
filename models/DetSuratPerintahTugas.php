@@ -63,7 +63,7 @@ class DetSuratPerintahTugas extends \yii\db\ActiveRecord
 
     public function getSubDetPerintahTugas()
     {
-        return $this->hasMany(SubSuratPerintahTugas::className(), ['id_d_spt' => 'id_d_spt',]);
+        return $this->hasMany(SubSuratPerintahTugas::className(), ['id_d_spt' => 'id_d_spt']);
     }
 
     public function setSubDetPerintahTugas($value)
@@ -78,8 +78,9 @@ class DetSuratPerintahTugas extends \yii\db\ActiveRecord
 
     public function getTotal_anggaran()
     {
-        return is_null($this->suratPerintahTugas)?0:$this->suratPerintahTugas->selisih*  $this->hasMany(SubSuratPerintahTugas::className(), ['id_d_spt' => 'id_d_spt'])->sum('anggaran');
+        return is_null($this->suratPerintahTugas) ? 0 : $this->suratPerintahTugas->selisih * $this->hasMany(SubSuratPerintahTugas::className(), ['id_d_spt' => 'id_d_spt'])->sum('anggaran');
     }
+
     /**
      * @return \yii\db\ActiveQuery
      */
@@ -91,6 +92,11 @@ class DetSuratPerintahTugas extends \yii\db\ActiveRecord
     public function getPangkat()
     {
         return is_null($this->personil) ? '' : $this->personil->nama_pangkat;
+    }
+
+    public function getJabatan()
+    {
+        return is_null($this->personil) ? '' : $this->personil->jabatan;
     }
 
     public function getId_pangkat()

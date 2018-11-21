@@ -63,6 +63,7 @@ use yii\helpers\Url;
                 ?>
         <div>&nbsp;&nbsp;&nbsp;&nbsp;NIP : <?php echo $row->nip; ?></div>
         <div>&nbsp;&nbsp;&nbsp;&nbsp;Pangkat/Golongan : <?php echo $row->pangkat; ?></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;Jabatan : <?php echo $row->jabatan; ?></div>
         
         <div>&nbsp;&nbsp;&nbsp;&nbsp; </div>
         <?php

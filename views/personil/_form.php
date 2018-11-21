@@ -34,6 +34,7 @@ $data = ArrayHelper::map(Pangkat::find()->select(['id_pangkat', 'nama_pangkat'])
             'allowClear' => true,
         ],
     ]); ?>
+    <?= $form->field($model, 'jabatan')->textInput(['maxlength' => true]); ?>
 
     <label > Penandatangan :</label>
         <?= $form->field($model, 'tanda_tangan_surat')->checkbox(array('label' => 'SPPD'))->label(''); ?>
