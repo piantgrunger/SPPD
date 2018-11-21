@@ -254,7 +254,7 @@ use yii\helpers\Url;
   </tr>
   <tr class = "isi">
     <td height="18" colspan="11" align="right">Pada tanggal&nbsp;</td>
-    <td colspan="2">:&nbsp;<?php echo tanggal_indo($tglSurat, false); ?></td>
+    <td colspan="2">:&nbsp;<?php echo  is_null($model->tgl_surat) ? '' : tanggal_indo($tglSurat, false); ?></td>
   </tr>
   <tr>
     <td>&nbsp;</td>
