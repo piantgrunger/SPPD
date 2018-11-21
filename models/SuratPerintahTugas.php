@@ -54,12 +54,12 @@ class SuratPerintahTugas extends \yii\db\ActiveRecord
             'Desember',
         );
         $split = explode('-', $tanggal);
-        $tgl_indo = $split[2] . ' ' . $bulan[(int)$split[1]] . ' ' . $split[0];
+        $tgl_indo = $split[2].' '.$bulan[(int) $split[1]].' '.$split[0];
 
         if ($cetak_hari) {
             $num = date('N', strtotime($tanggal));
 
-            return $hari[$num] . ', ' . $tgl_indo;
+            return $hari[$num].', '.$tgl_indo;
         }
 
         return $tgl_indo;
@@ -76,8 +76,8 @@ class SuratPerintahTugas extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['no_spt', 'tgl_surat', 'untuk', 'tujuan', 'zona', 'tgl_awal', 'dasar', 'jenis', 'tgl_akhir'], 'required'],
-            [['kendaraan', 'id_kegiatan', 'id_kota'], 'safe'],
+            [['no_spt',  'untuk', 'tujuan', 'zona', 'tgl_awal', 'dasar', 'jenis', 'tgl_akhir'], 'required'],
+            [['kendaraan', 'id_kegiatan', 'id_kota', 'tgl_surat'], 'safe'],
             [['id_alat_kelengkapan'], 'integer'],
             [['untuk', 'tujuan', 'dasar', 'jenis'], 'string'],
             [['no_spt'], 'string', 'max' => 50],
@@ -158,21 +158,20 @@ class SuratPerintahTugas extends \yii\db\ActiveRecord
         ->orderBy([new \yii\db\Expression('FIELD (jenis, "Ketua DPRD", "Wakil Ketua DPRD", "Ketua","Wakil Ketua","Sekretaris","Anggota","Staff")')]);
     }
 
-
     public function getSubSuratPerintahTugas()
     {
         return $this->hasMany(SubSuratPerintahTugas::className(), ['id_spt' => 'id_spt']);
     }
+
     public function getTotal_realisasi()
     {
-        return is_null($this->subSuratPerintahTugas)?0: $this->hasMany(SubSuratPerintahTugas::className(), ['id_spt' => 'id_spt'])->sum('realisasi');
+        return is_null($this->subSuratPerintahTugas) ? 0 : $this->hasMany(SubSuratPerintahTugas::className(), ['id_spt' => 'id_spt'])->sum('realisasi');
     }
 
     public function setDetailSuratPerintahTugas($value)
     {
         return $this->loadRelated('detailSuratPerintahTugas', $value);
     }
-
 
     public function getTanggalCetak()
     {
@@ -182,12 +181,12 @@ class SuratPerintahTugas extends \yii\db\ActiveRecord
         $tgl2 = explode(' ', $this->tanggal_indo($tanggal2, false));
 
         if ($tgl[1] !== $tgl2[1]) {
-            return $this->tanggal_indo($tanggal, false) ."&nbsp;". ($tanggal !== $tanggal2) ? '-&nbsp;'.$this->tanggal_indo($tanggal2, false) : '';
+            return $this->tanggal_indo($tanggal, false).'&nbsp;'.($tanggal !== $tanggal2) ? '-&nbsp;'.$this->tanggal_indo($tanggal2, false) : '';
         } else {
             if ($tgl[0] !== $tgl2[0]) {
                 return $tgl[0].' - '.$tgl2[0].'  '.$tgl[1].'  '.$tgl[2];
             } else {
-                return  $this->tanggal_indo($tanggal, false)."&nbsp;". ($tanggal !== $tanggal2) ? '-&nbsp;'.$this->tanggal_indo($tanggal2, false) : '';
+                return  $this->tanggal_indo($tanggal, false).'&nbsp;'.($tanggal !== $tanggal2) ? '-&nbsp;'.$this->tanggal_indo($tanggal2, false) : '';
             }
         }
     }
@@ -209,6 +208,6 @@ class SuratPerintahTugas extends \yii\db\ActiveRecord
             'Sat' => 'Sabtu',
         );
 
-        return $daftarHari[$day] . (($tglHari !== $tglHari2) ? ' - ' . $daftarHari[$day2] :"");
+        return $daftarHari[$day].(($tglHari !== $tglHari2) ? ' - '.$daftarHari[$day2] : '');
     }
 }

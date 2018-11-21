@@ -68,7 +68,7 @@ $data = ArrayHelper::map(
     'alat_kelengkapan'
 );
 $data2 = ArrayHelper::map(
-    Personil::find()->select(['nama_personil', 'nama_personil'])->where(['in', 'id_personil', [109, 102, 116]])->asArray()->all(),
+    Personil::find()->select(['nama_personil', 'nama_personil'])->where(['tanda_tangan_surat' => 1])->asArray()->all(),
 'nama_personil',
     'nama_personil'
 );
