@@ -157,10 +157,7 @@ use yii\helpers\Url;
         //echo date('d', strtotime($model->tgl_akhir)).'  '.(ucfirst($bulan[date('m')])).'  '.date('Y');
     function tanggal_indo($tgl, $cetak_hari = false)
     {
-        if (is_null($tgl)) {
-            return ' ';
-        } else {
-            $hari = array(1 => 'Senin',
+        $hari = array(1 => 'Senin',
                 'Selasa',
                 'Rabu',
                 'Kamis',
@@ -169,7 +166,7 @@ use yii\helpers\Url;
                 'Minggu',
             );
 
-            $bulan = array(1 => 'Januari',
+        $bulan = array(1 => 'Januari',
                 'Februari',
                 'Maret',
                 'April',
@@ -182,18 +179,18 @@ use yii\helpers\Url;
                 'November',
                 'Desember',
             );
-            $split = explode('-', $tgl);
-            //      echo "tgl:". $tgl ."##";
-            $tgl_indo = $split[2].' '.$bulan[(int) $split[1]].' '.$split[0];
+        $split = explode('-', $tgl);
+        //      echo "tgl:". $tgl ."##";
+        $tgl_indo = $split[2].' '.$bulan[(int) $split[1]].' '.$split[0];
 
-            if ($cetak_hari) {
-                $num = date('N', strtotime($tgl));
+        if ($cetak_hari) {
+            $num = date('N', strtotime($tgl));
 
-                return $hari[$num].', '.$tgl_indo;
-            }
-
-            return $tgl_indo;
+            return $hari[$num].', '.$tgl_indo;
         }
+
+        return $tgl_indo;
+    }
         $tgl = date('Y-m-d', strtotime($model->tgl_awal));
         $tglSurat = date('Y-m-d', strtotime($model->tgl_surat));
         $tglDoang = date('d', strtotime($model->tgl_awal));
@@ -224,7 +221,6 @@ use yii\helpers\Url;
                 echo tanggal_indo($tanggal, false); ?>&nbsp; <?php echo ($tanggal !== $tanggal2) ? '-&nbsp;'.tanggal_indo($tanggal2, false) : '';
             }
         }
-    }
        ?>
     </div></td>
   </tr>
