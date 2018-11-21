@@ -158,9 +158,9 @@ class SuratPerintahTugas extends \yii\db\ActiveRecord
         ->orderBy([new \yii\db\Expression('FIELD (jenis, "Ketua DPRD", "Wakil Ketua DPRD", "Ketua","Wakil Ketua","Sekretaris","Anggota","Staff")')]);
     }
 
-    public function getSubSuratPerintahTugas()
+    public function getPenandatangan()
     {
-        return $this->hasMany(SubSuratPerintahTugas::className(), ['id_spt' => 'id_spt']);
+        return $this->hasOne(Personil::className(), ['nama_personil' => 'penanda_tangan']);
     }
 
     public function getTotal_realisasi()

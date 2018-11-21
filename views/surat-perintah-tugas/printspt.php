@@ -281,7 +281,7 @@ use yii\helpers\Url;
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
-    <td colspan="5" align="right">KETUA DEWAN PERWAKILAN RAKYAT DAERAH</td>
+    <td colspan="5" align="right"> <td colspan="7" align="center"><?=strtoupper($model->penandatangan->nama_pangkat); ?> DEWAN PERWAKILAN RAKYAT DAERAH</td>
   </tr>
   <tr style="font-size:9px">
     <td height="16">&nbsp;</td>
