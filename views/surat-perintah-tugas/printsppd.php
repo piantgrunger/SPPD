@@ -220,13 +220,13 @@ function terbilang($x)
     <td colspan="2" >&nbsp;</td>
     <td>&nbsp;</td>
     <td  >&nbsp;</td>
-    <td colspan="7" align="center"><?=$titel; ?></td>
+    <td colspan="7" align="right"><?=$titel; ?></td>
   </tr>
   <tr class="isi">
     <td colspan="2" >&nbsp;</td>
     <td>&nbsp;</td>
     <td >&nbsp;</td>
-    <td colspan="7" align="center">KABUPATEN SIDOARJO</td>
+    <td colspan="7" align="right"><?php echo str_replace("%", "&nbsp;", str_pad('KABUPATEN SIDOARJO', strlen($titel), "%")); ?></td>
   </tr>
   <tr>
     <td  colspan="10">&nbsp;</td>
@@ -239,7 +239,7 @@ function terbilang($x)
     <td colspan="2" >&nbsp;</td>
     <td>&nbsp;</td>
     <td >&nbsp;</td>
-    <td colspan="7" align="center"><?php echo $model->penanda_tangan; ?></td>
+    <td colspan="7" align="right"><?php echo str_replace("%", "&nbsp;", str_pad($model->penanda_tangan, strlen($titel), "%")); ?></td>
   </tr>
   <tr>
     <td  colspan="10">&nbsp;</td>
