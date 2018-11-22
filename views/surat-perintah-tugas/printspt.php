@@ -27,7 +27,7 @@ use yii\helpers\Url;
     <td height="22" colspan="8" align="center" class="judul"><?= str_replace('~', '&nbsp;', str_pad('Nomor : '.$model->no_spt, 24, '~')); ?></td>
     <td height="22" colspan="3" align="center" class="judul">&nbsp;</td>
 
-    
+
   </tr>
   <tr>
     <td height="18" colspan="13">&nbsp;</td>
@@ -47,37 +47,48 @@ use yii\helpers\Url;
   <tr>
     <td height="22" colspan="13" align="center" class="judul">&nbsp;</td>
   </tr>
-  
+
   <tr class="isi">
     <td height="23" align="right">&nbsp;</td>
     <td width="107" align="left" valign="top">Kepada</td>
     <td width="35" align="left" valign="top">:</td>
     <td colspan="10" align="left" valign="top">
+                                <table>
+
       <?php
         $i = 0;
         foreach ($model->detailSuratPerintahTugas as $key => $row) {
             ++$i; ?>
 
-        <div style="margin-bottom: 1px"><?php echo $i.'.'.'&nbsp;'; ?>  <?php echo $row->nama_personil; ?></div>
-        <?php if ($row->status_personil !== 'Dewan') {
+       <?php if ($row->status_personil == 'Dewan') {
                 ?>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;NIP : <?php echo $row->nip; ?></div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;Pangkat/Golongan : <?php echo $row->pangkat; ?></div>
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;Jabatan : <?php echo $row->jabatan; ?></div>
-        
-        <div>&nbsp;&nbsp;&nbsp;&nbsp; </div>
+
+        <tr><td><?php echo $i.'.'.'&nbsp;'; ?></td><td>  <?php echo $row->nama_personil; ?></td></tr>
+        <?php
+            }
+            if ($row->status_personil !== 'Dewan') {
+                ?>
+         <tr><td>Nama</td><td>  :</td><td>   <?php echo $row->nama_personil; ?></td></tr>
+
+              <tr><td>NIP</td><td>  :</td><td>  <?php echo $row->nip; ?></td></tr>
+        <tr><td>Pangkat/Golongan </td><td> :</td><td>  <?php echo $row->pangkat; ?></td></tr>
+        <tr><td>Jabatan </td><td> : </td><td> <?php echo $row->jabatan; ?></td></tr>
+         <tr><td colspan=3>&nbsp; </td></tr>
+
         <?php
             } ?>
 
       <?php
-        } ?>    </td>
+        } ?>
+        </table>
+            </td>
 
-    
+
   </tr>
   <tr>
     <td height="18" colspan="13">&nbsp;</td>
   </tr>
- 
+
 
 <?php if ($row->status_personil === 'Dewan') {
             ?>
@@ -88,7 +99,7 @@ use yii\helpers\Url;
     <td  colspan="13" align="left"><?= $model->nama_alat_kelengkapan; ?></td>
     </tr>
 <?php
-        } ?> 
+        } ?>
         </tr>
 
 
@@ -237,7 +248,7 @@ use yii\helpers\Url;
   </tr>
   <tr class = "isi">
     <td height="16" colspan="1">&nbsp;</td>
-    <td colspan="12">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Demikian agar yang bersangkutan melaksanakan tugas dengan penuh tanggung jawab dan</td>
+    <td colspan="12">Demikian agar yang bersangkutan melaksanakan tugas dengan penuh tanggung jawab dan</td>
   </tr>
   <tr>
     <td height="16" colspan="13" class = "isi"> &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;segera melaporkan hasilnya.</td>
@@ -290,7 +301,7 @@ use yii\helpers\Url;
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
-    <td colspan="7" align="right">KABUPATEN SIDOARJO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td colspan="7" align="right">KABUPATEN SIDOARJO&nbsp;</td>
   </tr>
   <tr style="font-size:9px">
     <td>&nbsp;</td>
@@ -334,7 +345,7 @@ use yii\helpers\Url;
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
-    <td colspan="7" align="right"><?php echo $model->penanda_tangan; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td colspan="7" align="right"><?php  echo str_replace("%", "&nbsp;", str_pad($model->penanda_tangan, 35, "%")); ?></td>
   </tr>
-  
+
 </table>
