@@ -68,7 +68,7 @@ use yii\helpers\Url;
             }
             if ($row->status_personil !== 'Dewan') {
                 ?>
-         <tr><td>Nama</td><td>  :</td><td>   <?php echo $row->nama_personil; ?></td></tr>
+         <tr><td><?php echo $i.'.'.'&nbsp;'; ?>Nama</td><td>  :</td><td>   <?php echo $row->nama_personil; ?></td></tr>
 
               <tr><td>NIP</td><td>  :</td><td>  <?php echo $row->nip; ?></td></tr>
         <tr><td>Pangkat/Golongan </td><td> :</td><td>  <?php echo $row->pangkat; ?></td></tr>
