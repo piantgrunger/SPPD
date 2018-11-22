@@ -301,7 +301,7 @@ use yii\helpers\Url;
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
-    <td colspan="7" align="right">KABUPATEN SIDOARJO&nbsp;</td>
+    <td colspan="7" align="right"><?php  echo str_replace("%", "&nbsp;", str_pad('KABUPATEN SIDOARJO', strlen($titel), "%")); ?></td>
   </tr>
   <tr style="font-size:9px">
     <td>&nbsp;</td>
@@ -345,7 +345,7 @@ use yii\helpers\Url;
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
-    <td colspan="7" align="right"><?php  echo str_replace("%", "&nbsp;", str_pad($model->penanda_tangan, 35, "%")); ?></td>
+    <td colspan="7" align="right"><?php  echo str_replace("%", "&nbsp;", str_pad($model->penanda_tangan, strlen($titel), "%")); ?></td>
   </tr>
 
 </table>
