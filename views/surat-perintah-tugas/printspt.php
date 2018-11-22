@@ -68,12 +68,12 @@ use yii\helpers\Url;
             }
             if ($row->status_personil !== 'Dewan') {
                 ?>
-         <tr><td><?php echo $i.'.'.'&nbsp;'; ?>Nama</td><td>  :</td><td>   <?php echo $row->nama_personil; ?></td></tr>
+         <tr><td><?php echo $i.'.'.'&nbsp;'; ?></td> <td>Nama</td><td>  :</td><td>   <?php echo $row->nama_personil; ?></td></tr>
 
-              <tr><td>NIP</td><td>  :</td><td>  <?php echo $row->nip; ?></td></tr>
-        <tr><td>Pangkat/Golongan </td><td> :</td><td>  <?php echo $row->pangkat; ?></td></tr>
-        <tr><td>Jabatan </td><td> : </td><td> <?php echo $row->jabatan; ?></td></tr>
-         <tr><td colspan=3>&nbsp; </td></tr>
+              <tr><td>&nbsp;</td><td>NIP</td><td>  :</td><td>  <?php echo $row->nip; ?></td></tr>
+        <tr><td>&nbsp;</td><td>Pangkat/Golongan </td><td> :</td><td>  <?php echo $row->pangkat; ?></td></tr>
+        <tr><td>&nbsp;</td><td>Jabatan </td><td> : </td><td> <?php echo $row->jabatan; ?></td></tr>
+         <tr><td colspan=4>&nbsp; </td></tr>
 
         <?php
             } ?>
