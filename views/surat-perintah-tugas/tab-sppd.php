@@ -18,9 +18,28 @@ $gridColumns = [
     'penanda_tangan',
 
     [
-        'class' => 'kartik\grid\ActionColumn', 'template' => ' {koreksi} {sppd} {sppd2} {sppd3} {realisasi}',
+        'class' => 'kartik\grid\ActionColumn', 'template' => ' {koreksi} {kwitansi} {realisasi}  <br>  {sppd} {sppd2} {sppd3}',
         'buttons' => [
 
+            'kwitansi' => function ($url, $model) {
+                if (Mimin::checkRoute($this->context->id . '/create-kwitansi')) {
+                    return
+                        Html::a(
+                        'Buat Kwitansi',
+                        ['create-kwitansi', 'id' => $model->id_spt],
+                        [
+                            'class' => 'btn btn-warning',
+                                'data' => [
+                                'confirm' => Yii::t('app', 'Pembuatan Kwitansi akan Menghapus Kwitansi dan Realisasi yang Sudah Ada Apakah Anda Yakin??'),
+
+                            ]
+
+                        ]
+                    );
+                } else {
+                    return ' ';
+                }
+            },
 
             'koreksi' => function ($url, $model) {
                 if (Mimin::checkRoute($this->context->id . '/sppd')) {

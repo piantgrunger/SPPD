@@ -141,32 +141,37 @@ class SuratPerintahTugasController extends Controller
 
     public function actionRealisasi($id)
     {
-        $header = $this->findModel($id);
-        foreach ($header->detailSuratPerintahTugas as $model) {
-            if (count($model->subDetPerintahTugas) === 0) {
-                $dataBiaya = Tarif::find()->where(['id_pangkat' => $model->id_pangkat, 'tujuan' => $model->suratPerintahTugas->zona])->all();
-                $list = [];
-                foreach ($dataBiaya as $data) {
-                    $model1 = new SubSuratPerintahTugas();
-                    $model1->nama_biaya = $data->nama_biaya;
-                    $model1->anggaran = $data->biaya;
-
-                    $model1->id_d_spt = $model->id_d_spt;
-                    $model1->id_spt = $model->id_spt;
-                    $model1->realisasi = 0;
-
-                    array_push($list, $model1);
-                }
-                if (count($list) > 0) {
-                    $model->subDetPerintahTugas = $list;
-                }
-                $model->save(false);
-            }
-        }
-
         return $this->render('realisasi', [
             'model' => $this->findModel($id),
         ]);
+    }
+    public function actionCreateKwitansi($id)
+    {
+        $header = $this->findModel($id);
+        $command = Yii::$app->getDb()->createCommand("delete from tb_sdt_spt where id_spt = $id");
+        $command->execute();
+        foreach ($header->detailSuratPerintahTugas as $model) {
+            $dataBiaya = Tarif::find()->where(['id_pangkat' => $model->id_pangkat, 'tujuan' => $model->suratPerintahTugas->zona])->all();
+            $list = [];
+            foreach ($dataBiaya as $data) {
+                $model1 = new SubSuratPerintahTugas();
+                $model1->nama_biaya = $data->nama_biaya;
+                $model1->anggaran = $data->biaya;
+
+                $model1->id_d_spt = $model->id_d_spt;
+                $model1->id_spt = $model->id_spt;
+                $model1->realisasi = $data->biaya *$header->selisih;
+
+                array_push($list, $model1);
+            }
+            if (count($list) > 0) {
+                $model->subDetPerintahTugas = $list;
+            }
+            $model->save(false);
+        }
+
+        Yii::$app->session->setFlash('info', 'Kwitansi Berhasil Dibuat');
+        return $this->redirect("index-sppd");
     }
 
     /**
