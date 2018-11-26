@@ -124,7 +124,8 @@ $formatter = \Yii::$app->formatter;
         $realisasi = $sub->realisasi;
 
         //if ($realisasi > 0.00) {
-        echo '<tr><td>  '.$sub->nama_biaya.'</td><td> :</td><td width ="40%" align="right"> '.$sub->durasi.' x Rp  '.$formatter->asDecimal(($sub->durasi === 0) ? 0 : $sub->realisasi / $sub->durasi, 0).'</td><td> =</td><td> Rp  '.$formatter->asDecimal($sub->realisasi, 0).'</td></tr>';
+            echo '<tr><td>  '.$sub->nama_biaya.'</td><td> :</td><td width ="40%" align="right"> '.$sub->durasi.' x Rp  '.$formatter->asDecimal(($sub->durasi === 0) ? 0 : $sub->realisasi / $sub->durasi, 0).'</td><td> =</td><td width ="20%" align="right"> Rp  '.$formatter->asDecimal($sub->realisasi, 0).'</td></tr>';
+        
         //}
     }
     echo "</table></td><td class=\"printatas printkanan printbawah\" >&nbsp;$detail->pangkat</td>
