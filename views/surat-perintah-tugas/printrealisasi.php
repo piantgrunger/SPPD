@@ -28,9 +28,7 @@
       $tgl_indo = $split[2].' '.$bulan[(int) $split[1]].' '.$split[0];
 
       if ($cetak_hari) {
-          $num = date('N', strtotime($tgl));
-
-          return $hari[$num].', '.$tgl_indo;
+          return  '   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        '.$bulan[(int) $split[1]].' '.$split[0];
       }
 
       return $tgl_indo;
@@ -93,8 +91,8 @@ foreach ($model->detailSuratPerintahTugas  as $detail) {
     echo "<tr>
 <td class=\"printatas printkanan printkiri\" align=\"center\">$i</td>
 <td class=\"printatas printkanan \" >&nbsp;$detail->nama_personil</td>
-<td class=\"printatas printkanan \" >&nbsp;$detail->pangkat</td>
-<td class=\"printatas printkanan \" align ='right' >&nbsp;Rp&nbsp;&nbsp;&nbsp;&nbsp; ".$formatter->asDecimal($detail->total_realisasi, 0).'</td>
+<td class=\"printatas printkanan \" align=\"center\" >&nbsp;$detail->pangkat</td>
+<td class=\"printatas printkanan \" align ='right' ><table><tr><td> &nbsp;Rp</td><td align=\"right\" width=\"85%\"> &nbsp;&nbsp;&nbsp;&nbsp; ".$formatter->asDecimal($detail->total_realisasi, 0).'</td> </tr> </table></td>
 </tr>
 ';
     ++$i;
@@ -103,11 +101,11 @@ foreach ($model->detailSuratPerintahTugas  as $detail) {
   <tr>
        <td class="printatas printkanan  " align="center" colspan=2>&nbsp;:</td>
        <td class="printatas printkanan printbawah abu" align="center">JUMLAH</td>
-        <td class="printatas printkanan printbawah abu"  align ='right'>&nbsp;Rp&nbsp;&nbsp;&nbsp;&nbsp;<?=$formatter->asDecimal($total, 0); ?></td>
+        <td class="printatas printkanan printbawah abu"  align ='right'><table><tr><td> &nbsp;Rp</td><td align="right" width="85%"> &nbsp;&nbsp;&nbsp;&nbsp; <?=$formatter->asDecimal($total, 0); ?></td> </tr> </table></td>
 </tr>
 </table>
 <br><br>
-<P align="right">  Dibayar Lunas Tgl: <?=date('d M Y'); ?></P>
+<P align="right">  Dibayar Lunas Tgl: <?=tanggal_indo(date('Y-m-d'), true); ?></P>
 <table autosize="1" width="722" height="822" border="0" cellpadding="5" cellspacing="0">
 <tr>
 <td align="center">Setuju Dibayar <br>

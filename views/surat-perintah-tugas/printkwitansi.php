@@ -1,5 +1,18 @@
 <?php
     $i = 1;
+    $bulan1 = array(1 => 'Januari',
+    'Februari',
+    'Maret',
+    'April',
+    'Mei',
+    'Juni',
+    'Juli',
+    'Agustus',
+    'September',
+    'Oktober',
+    'November',
+    'Desember',
+);
   function tanggal_indo($tgl, $cetak_hari = false)
   {
       $hari = array(1 => 'Senin',
@@ -44,16 +57,23 @@ $bulanSaja1 = date('m', strtotime($model->tgl_awal));
 $bulanSaja2 = date('m', strtotime($model->tgl_akhir));
 
 ?>
+
       &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;   No. BKU : ........                                    <br>
 
       KODE REK : <?=$model->rekening; ?> <br>
 KEGIATAN : <?=$model->nama_kegiatan; ?><Br>
+<br> 
+<br> 
+<br> 
 
 <?php foreach ($model->detailSuratPerintahTugas  as $detail) {
     ?>
 <div class="divprint">
 
-
+<table>
+<tr>
+<td></td>
+<td width="70%">
  DAFTAR :  Tanda Terima Uang Biaya Perjalanan Dinas <?=$model->nama_alat_kelengkapan; ?> melakukan Kunjungan kerja terkait <?=$model->untuk; ?> pada : <br>
 <b>Tempat :  <?=$model->tujuan; ?></b>     <br>
 <b>Tanggal : </b>     <?php
@@ -71,6 +91,9 @@ KEGIATAN : <?=$model->nama_kegiatan; ?><Br>
             echo tanggal_indo($tanggal, false); ?>&nbsp; <?php echo ($tanggal !== $tanggal2) ? '-&nbsp;'.tanggal_indo($tanggal2, false) : '';
         }
     } ?>            
+    </td>
+ </tr>
+    </table>
 
 <br> 
 
@@ -94,12 +117,17 @@ $formatter = \Yii::$app->formatter;
 
     echo "<tr>
 <td class=\"printatas printkanan printkiri printbawah\" align=\"center\">$i</td>
-<td class=\"printatas printkanan printbawah\" >&nbsp;$detail->nama_personil '<br>";
+<td class=\"printatas printkanan printbawah\" >&nbsp;$detail->nama_personil '<br>
+<table>";
 
     foreach ($detail->subDetPerintahTugas as $sub) {
-        echo ' - '.$sub->nama_biaya.' : '.$sub->durasi.' x Rp  '.$formatter->asDecimal(($sub->durasi === 0) ? 0 : $sub->realisasi / $sub->durasi, 0).' = Rp  '.$formatter->asDecimal($sub->realisasi, 0).'<br>';
+        $realisasi = $sub->realisasi;
+
+        if ($realisasi > 0.00) {
+            echo '<tr><td>  '.$sub->nama_biaya.'</td><td> :</td><td> '.$sub->durasi.' x Rp  '.$formatter->asDecimal(($sub->durasi === 0) ? 0 : $sub->realisasi / $sub->durasi, 0).'</td><td> =</td><td> Rp  '.$formatter->asDecimal($sub->realisasi, 0).'</td></tr>';
+        }
     }
-    echo "</td><td class=\"printatas printkanan printbawah\" >&nbsp;$detail->pangkat</td>
+    echo "</table></td><td class=\"printatas printkanan printbawah\" >&nbsp;$detail->pangkat</td>
 <td class=\"printatas printkanan printbawah \" align ='right' >&nbsp;Rp&nbsp;&nbsp;&nbsp;&nbsp; ".$formatter->asDecimal($detail->total_realisasi, 0).'</td>
 </tr>
 ';
