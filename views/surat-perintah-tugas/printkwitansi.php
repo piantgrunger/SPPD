@@ -123,9 +123,9 @@ $formatter = \Yii::$app->formatter;
     foreach ($detail->subDetPerintahTugas as $sub) {
         $realisasi = $sub->realisasi;
 
-        if ($realisasi > 0.00) {
-            echo '<tr><td>  '.$sub->nama_biaya.'</td><td> :</td><td> '.$sub->durasi.' x Rp  '.$formatter->asDecimal(($sub->durasi === 0) ? 0 : $sub->realisasi / $sub->durasi, 0).'</td><td> =</td><td> Rp  '.$formatter->asDecimal($sub->realisasi, 0).'</td></tr>';
-        }
+        //if ($realisasi > 0.00) {
+        echo '<tr><td>  '.$sub->nama_biaya.'</td><td> :</td><td width ="40%" align="right"> '.$sub->durasi.' x Rp  '.$formatter->asDecimal(($sub->durasi === 0) ? 0 : $sub->realisasi / $sub->durasi, 0).'</td><td> =</td><td> Rp  '.$formatter->asDecimal($sub->realisasi, 0).'</td></tr>';
+        //}
     }
     echo "</table></td><td class=\"printatas printkanan printbawah\" >&nbsp;$detail->pangkat</td>
 <td class=\"printatas printkanan printbawah \" align ='right' >&nbsp;Rp&nbsp;&nbsp;&nbsp;&nbsp; ".$formatter->asDecimal($detail->total_realisasi, 0).'</td>
