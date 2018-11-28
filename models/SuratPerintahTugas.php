@@ -163,6 +163,11 @@ class SuratPerintahTugas extends \yii\db\ActiveRecord
         return $this->hasOne(Personil::className(), ['nama_personil' => 'penanda_tangan']);
     }
 
+    public function getSubSuratPerintahTugas()
+    {
+        return $this->hasMany(SubSuratPerintahTugas::className(), ['id_spt' => 'id_spt']);
+    }
+
     public function getTotal_realisasi()
     {
         return is_null($this->subSuratPerintahTugas) ? 0 : $this->hasMany(SubSuratPerintahTugas::className(), ['id_spt' => 'id_spt'])->sum('realisasi');
