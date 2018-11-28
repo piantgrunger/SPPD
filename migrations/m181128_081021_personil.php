@@ -12,10 +12,10 @@ class m181128_081021_personil extends Migration
      */
     public function safeUp()
     {
-        $this->execute('delete from tb_mt_spt');
+        //$this->execute('delete from tb_mt_spt');
 
         $this->execute('delete from tb_d_alat_kelengkapan');
-        $this->execute(' delete from tb_m_personil');
+        $this->execute(' delete from tb_m_personil where id_personil not in (select id_personil from tb_dt_spt)');
 
         $this->execute("
         INSERT INTO `tb_m_personil` (`id_personil`, `nip`, `nama_personil`, `status_personil`, `golongan`, `id_pangkat`, `setuju`, `mengetahui`, `lunas`, `tanda_tangan_surat`, `status`, `jabatan`) VALUES
