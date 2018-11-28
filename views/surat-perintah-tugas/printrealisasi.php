@@ -92,11 +92,11 @@ foreach ($model->detailSuratPerintahTugas  as $detail) {
 <td class=\"printatas printkanan printkiri\" align=\"center\">$i</td>
 <td class=\"printatas printkanan \" >&nbsp;$detail->nama_personil</td>
 <td class=\"printatas printkanan \" align=\"center\" >&nbsp;$detail->pangkat</td>
-<td class=\"printatas printkanan \" align ='right' ><table><tr><td> &nbsp;Rp</td><td align=\"right\" width=\"85%\"> &nbsp;&nbsp;&nbsp;&nbsp; ".$formatter->asDecimal($detail->total_realisasi, 0).'</td> </tr> </table></td>
+<td class=\"printatas printkanan \" align ='right' ><table><tr><td> &nbsp;Rp</td><td align=\"right\" width=\"85%\"> &nbsp;&nbsp;&nbsp;&nbsp; ".$formatter->asDecimal($detail->total_anggaran, 0).'</td> </tr> </table></td>
 </tr>
 ';
     ++$i;
-    $total += $detail->total_realisasi;
+    $total += $detail->total_anggaran;
 }?>
   <tr>
        <td class="printatas printkanan  " align="center" colspan=2>&nbsp;:</td>
