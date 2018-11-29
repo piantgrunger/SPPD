@@ -7,7 +7,7 @@ use Yii;
 /**
  * This is the model class for table "{{%tb_m_kegiatan}}".
  *
- * @property int $id_kegiatan
+ * @property int    $id_kegiatan
  * @property string $nama_kegiatan
  * @property string $Rekening
  * @property string $Daerah
@@ -30,7 +30,7 @@ class Kegiatan extends \yii\db\ActiveRecord
         return [
             [['nama_kegiatan', 'Rekening'], 'required'],
             [['Daerah'], 'string'],
-            [['nama_kegiatan', 'Rekening'], 'string', 'max' => 50],
+            [['nama_kegiatan', 'Rekening'], 'string', 'max' => 200],
         ];
     }
 
