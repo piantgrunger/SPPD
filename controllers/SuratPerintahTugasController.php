@@ -145,6 +145,7 @@ class SuratPerintahTugasController extends Controller
             'model' => $this->findModel($id),
         ]);
     }
+
     public function actionCreateKwitansi($id)
     {
         $header = $this->findModel($id);
@@ -160,7 +161,7 @@ class SuratPerintahTugasController extends Controller
 
                 $model1->id_d_spt = $model->id_d_spt;
                 $model1->id_spt = $model->id_spt;
-                $model1->realisasi = $data->biaya *$header->selisih;
+                $model1->realisasi = $data->biaya * $header->selisih;
 
                 array_push($list, $model1);
             }
@@ -171,7 +172,8 @@ class SuratPerintahTugasController extends Controller
         }
 
         Yii::$app->session->setFlash('info', 'Kwitansi Berhasil Dibuat');
-        return $this->redirect("index-sppd");
+
+        return $this->redirect('index-kwitansi');
     }
 
     /**

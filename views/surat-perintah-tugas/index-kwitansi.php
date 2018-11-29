@@ -42,7 +42,7 @@ $gridColumns = [
                         '<span class="glyphicon glyphicon-print"></span> ',
                         ['print-realisasi', 'id' => $model->id_spt],
                         [
-                            'title' => Yii::t('app', 'Realisasi Global'),
+                            'title' => Yii::t('app', 'Kwitansi  Global'),
                             'data-pjax' => 0,
                         ]
                     );
