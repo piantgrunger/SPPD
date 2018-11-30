@@ -4,13 +4,15 @@
 use hscstudio\mimin\components\Mimin;
 use yii\helpers\Html;
 use kartik\grid\GridView;
-use yii\widgets\Pjax; use kartik\export\ExportMenu;
-$gridColumns=[['class' => 'kartik\grid\SerialColumn'], 
+use yii\widgets\Pjax;
+use kartik\export\ExportMenu;
+
+$gridColumns=[['class' => 'kartik\grid\SerialColumn'],
             'nama_kota',
             'lingkup',
 
          ['class' => 'kartik\grid\ActionColumn',   'template' => Mimin::filterActionColumn([
-              'update','delete','view'],$this->context->route),    ],    ];
+              'update','delete','view'], $this->context->route),    ],    ];
 
 
 /* @var $this yii\web\View */
@@ -23,7 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="kota-index">
 
     <?php Pjax::begin(); ?>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <?php // echo $this->render('_search', ['model' => $searchModel]);?>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,

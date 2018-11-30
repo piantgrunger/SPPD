@@ -8,6 +8,7 @@ use app\models\SPPDSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use kartik\mpdf\Pdf;
 
 /**
  * SuratPerintahTugasController implements the CRUD actions for SuratPerintahTugas model.
@@ -45,6 +46,38 @@ class LaporanController extends Controller
         ]);
     }
 
+    public function actionCetakRekap($tgl_awal, $tgl_akhir)
+    {
+        $model = SuratPerintahTugas::find()->where(['between','tgl_awal',$tgl_awal,$tgl_akhir])->all();
+        $content= $this->renderPartial('rekap', [
+            'model' => $model,
+            'tanggal1' =>$tgl_awal
+
+        ]);
+        $pdf = new Pdf([
+   // set to use core fonts only
+            'mode' => Pdf::MODE_UTF8,
+   // A4 paper format
+            'format' => Pdf::FORMAT_LEGAL,
+   // portrait orientation
+            'orientation' => Pdf::ORIENT_LANDSCAPE,
+   // stream to browser inline
+            'destination' => Pdf::DEST_BROWSER,
+   // your html content input
+            'content' => $content,
+   // format content from your own css file if needed or use the
+   // enhanced bootstrap css built by Krajee for mPDF formatting
+            'cssFile' => '@app/web/css/print.css',
+            'defaultFont' => 'Arial',
+   // any css to be embedded if required
+            'cssInline' => '.kv-heading-1{font-size:18px}',
+    // set mPDF properties on the fly
+            'options' => ['title' => 'Cetak SPT '],
+    // call mPDF methods on the fly
+        ]);
+
+        return $pdf->render();
+    }
     /**
      * Finds the SuratPerintahTugas model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.

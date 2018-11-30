@@ -78,7 +78,7 @@ class SPPDSearch extends SuratPerintahTugas
             $query->andWhere('id_kegiatan is not null');
         }
 
-        $query->andFilterWhere(['between', 'tgl_surat', $this->tgl_aw, $this->tgl_ak]);
+        $query->andFilterWhere(['between', 'tgl_awal', $this->tgl_aw, $this->tgl_ak]);
 
         return $dataProvider;
     }

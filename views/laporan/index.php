@@ -4,6 +4,7 @@
 use kartik\grid\GridView;
 use yii\widgets\Pjax;
 use yii\bootstrap\Html;
+use hscstudio\mimin\components\Mimin;
 
 $gridColumns = [
     ['class' => 'kartik\grid\SerialColumn'],
@@ -83,6 +84,8 @@ $gridColumns = [
             'heading' => '<i class="glyphicon glyphicon-tasks"></i>  <strong> '.Yii::t('app', 'Laporan Surat Perintah Perjalanan Dinas').'</strong>',
         ],
         'toolbar' => [
+            ['content' => ((Mimin::checkRoute($this->context->id . "/cetak-rekap"))) ? Html::a(Yii::t('app', 'Cetak Rekap'), ['cetak-rekap','tgl_awal'=>$searchModel->tgl_aw,'tgl_akhir' =>$searchModel->tgl_ak], ['class' => 'btn btn-success']) : ""],
+
             '{export}',
             '{toggleData}',
         ],
