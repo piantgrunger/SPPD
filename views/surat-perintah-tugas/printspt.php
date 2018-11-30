@@ -52,7 +52,7 @@ use yii\helpers\Url;
     <td height="23" align="right">&nbsp;</td>
     <td width="107" align="left" valign="top">Kepada</td>
     <td width="35" align="left" valign="top">:</td>
-    <td colspan="10" align="left" valign="top">
+    <td colspan="10" align="left" valign="bottom">
                                 <table>
 
       <?php
@@ -89,23 +89,21 @@ use yii\helpers\Url;
     <td height="18" colspan="13">&nbsp;</td>
   </tr>
 
-
+<tr  class="isi">
 <?php if ($row->status_personil === 'Dewan') {
             ?>
-<tr  class="isi">
+
 <td height="18" align="right">&nbsp;</td>
   	<td align="left" valign="top">Jabatan</td>
   	<td align="left" valign="top">:</td>
     <td  colspan="13" align="left"><?= $model->nama_alat_kelengkapan; ?></td>
-    </tr>
+   
 <?php
         } ?>
         </tr>
 
 
-  <tr>
-    <td height="18" colspan="13">&nbsp;</td>
-  </tr>
+
   <tr class="isi">
   	<td height="18" align="right">&nbsp;</td>
   	<td align="left" valign="top">Untuk</td>
@@ -248,7 +246,7 @@ use yii\helpers\Url;
   </tr>
   <tr class = "isi">
     <td height="16" colspan="1">&nbsp;</td>
-    <td colspan="12">Demikian agar yang bersangkutan melaksanakan tugas dengan penuh tanggung jawab dan</td>
+    <td colspan="12">&nbsp;Demikian agar yang bersangkutan melaksanakan tugas dengan penuh tanggung jawab dan</td>
   </tr>
   <tr>
     <td height="16" colspan="13" class = "isi"> &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;segera melaporkan hasilnya.</td>
@@ -301,7 +299,7 @@ use yii\helpers\Url;
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
-    <td colspan="7" align="right"><?php  echo str_replace("%", "&nbsp;", str_pad('KABUPATEN SIDOARJO', strlen($titel), "%")); ?></td>
+    <td colspan="7" align="right"><?php  echo str_replace('%', '&nbsp;', str_pad('KABUPATEN SIDOARJO', strlen($titel), '%')); ?></td>
   </tr>
   <tr style="font-size:9px">
     <td>&nbsp;</td>
@@ -345,7 +343,7 @@ use yii\helpers\Url;
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
-    <td colspan="7" align="right"><?php  echo str_replace("%", "&nbsp;", str_pad($model->penanda_tangan, strlen($titel)+3, "%")); ?></td>
+    <td colspan="7" align="right"><?php  echo str_replace('%', '&nbsp;', str_pad($model->penanda_tangan, strlen($titel) + 3, '%')); ?></td>
   </tr>
 
 </table>

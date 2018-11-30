@@ -99,34 +99,38 @@ function terbilang($x)
   <tr class="isi" >
     <td align="center" valign="top" class="printatas printkiri" >1.</td>
     <td valign="top"  class="printatas">Pejabat yang memberi perintah</td>
-    <td class="printatas printkiri" >: </td    ><td colspan="7"  class="printatas printkanan"><?php echo $model->penanda_tangan; ?></td>
+    <td class="printatas printkiri" >&nbsp;:&nbsp; </td    ><td colspan="7"  class="printatas printkanan"><?php echo $model->penanda_tangan; ?></td>
   </tr>
   <tr class="isi">
     <td align="center"  valign="top" class="printkiri printatas" >2.</td>
     <td  class="printatas">Nama / NIP Pegawai yang Diperintah mengadakan perjalanan dinas</td>
-    <td valign="top" class="printkiri printatas">: </td>
+    <td valign="top" class="printkiri printatas">
+    &nbsp;:&nbsp; </td>
     <td colspan="7" valign="top" class="printatas printkanan"><?php echo $row->nama_personil; ?> &nbsp;/&nbsp;<?php echo $row->nip; ?> </td>
   </tr>
   <tr class="isi">
     <td align="center" valign="top" class="printatas printkiri">3.</td>
     <td class="printatas" >Jabatan, Pangkat dan Golongan dari yang diperintah</td>
-    <td valign="top" style = "" class="printatas printkiri">:</td>
-    <td colspan="7" valign="top" class="printatas printkanan" ><?php  echo ($row->status_personil === 'Dewan') ? 'Anggota DPRD Kabupaten Sidoarjo' : $row->pangkat; ?>&nbsp;/ <?php echo $row->jenis; ?>&nbsp;</td>
+    <td valign="top" style = "" class="printatas printkiri">&nbsp;:&nbsp;</td>
+    <td colspan="7" valign="top" class="printatas printkanan" ><?php  echo ($row->status_personil !== 'Dewan') ? $row->jabatan.'  '.$row->pangkat :
+      $row->jenis.'  '.(strpos($row->jenis, 'DPRD') ? 'Kabupaten Sidoarjo' : $model->nama_alat_kelengkapan); ?>&nbsp;</td>
   </tr>
   <tr class="isi">
     <td width="25" align="center" valign="top" class="printkiri printatas" >4.</td>
     <td valign="top" width="266" class="printatas">Perjalanan Dinas Diperintahkan</td>
-    <td valign="top" class="printkiri printatas" >:  </td>
-    <td width="32" valign="middle" class ="printatas">Dari </td>
-    <td colspan="1" class ="printatas">: Sidoarjo</td>
-    <td colspan="5" class="printkanan printatas">&nbsp;</td>
+    <td  class="printkiri printatas" >&nbsp;:&nbsp;  </td>
+    <td width="32"  class ="printatas">Dari </td>
+    <td colspan="1" class ="printatas">&nbsp;:&nbsp;</td>
+    <td colspan="5" class="printkanan printatas">Sidoarjo</td>
+    
   </tr>
   <tr class="isi">
     <td class="printkiri" >&nbsp;</td>
     <td >&nbsp;</td>
     <td  class="printkiri">&nbsp;</td>
     <td>Ke  </td>
-    <td colspan="6" class="printkanan">:&nbsp;<?php echo $model->nama_kota; ?></td>
+    <td colspan="5" class="">:&nbsp;<?php echo $model->nama_kota; ?></td>
+    <td colspan="1" class="printkanan">&nbsp;</td>
   </tr>
   <tr class="isi">
     <td class="printkiri" >&nbsp;</td>
@@ -137,8 +141,8 @@ function terbilang($x)
   <tr class="isi">
     <td valign="top" align="center" class="printkiri printatas">5.</td>
     <td valign="top" class="printatas" >Perjalanan Dinas direncanakan</td>
-    <td valign="top"  class="printkiri printatas">:</td>
-    <td colspan="7"  class="printatas printkanan">Selama : <?php echo $model->selisih; ?> ( <?php $angka = $model->selisih;
+    <td valign="top"  class="printkiri printatas">&nbsp;:&nbsp;</td>
+    <td colspan="7"  class="printatas printkanan">Selama  <?php echo $model->selisih; ?> ( <?php $angka = $model->selisih;
         echo terbilang($angka); ?> ) Hari</td>
   </tr>
   <tr class="isi">
@@ -167,25 +171,25 @@ function terbilang($x)
   <tr class="isi">
     <td valign="top" align="center" class="printbawah printkiri" >6.</td>
     <td valign="top" class="printbawah" >Maksud Mengadakan Perjalanan</td>
-    <td valign="top" class="printbawah printkiri" >:</td>
+    <td valign="top" class="printbawah printkiri" >&nbsp;:&nbsp;</td>
     <td  colspan="7" class="printbawah printkanan"><?php echo nl2br(stripcslashes($model->untuk)); ?></td>
   </tr>
   <tr class="isi">
     <td valign="top" align="center" class="printbawah printkiri" >7.</td>
     <td valign="top" class="printbawah">Perhitungan Biaya Perjalanan</td>
-    <td valign="top" class="printbawah printkiri" >:</td>
-    <td  colspan="7" class="printbawah printkanan">Atas Beban Sekertariat DPRD Kabupaten Sidoarjo Rekening <?php echo $model->nama_kegiatan.' ( '.$model->rekening.' ) '; ?> </td>
+    <td valign="top" class="printbawah printkiri" >&nbsp;:&nbsp;</td>
+    <td  colspan="7" class="printbawah printkanan">Atas Beban Sekertariat DPRD Kabupaten Sidoarjo Rekening <?php echo $model->rekening; ?> </td>
   </tr>
   <tr class="isi">
     <td valign="top" align="center" class="printkiri">8.</td>
     <td valign="top" >Keterangan</td>
-    <td valign="top" class="printkiri">:</td>
+    <td valign="top" class="printkiri">&nbsp;:&nbsp;</td>
     <td colspan="7" class="printkanan" >Surat Perintah No : <?php echo $model->no_spt; ?> </td>
   </tr>
   <tr class="isi">
     <td colspan="2" class="printbawah printkiri">&nbsp;</td>
     <td class="printbawah printkiri">&nbsp;</td>
-    <td colspan="7" class="printbawah printkanan">Tanggal : <?php echo  is_null($model->tgl_surat) ? '' : tanggal_indo($model->tgl_surat, false); ?></td>
+    <td colspan="7" class="printbawah printkanan">Tanggal  <?php echo  is_null($model->tgl_surat) ? '' : tanggal_indo($model->tgl_surat, false); ?></td>
   </tr>
   <tr>
     <td  colspan="10">&nbsp;</td>
@@ -194,18 +198,18 @@ function terbilang($x)
     <td >&nbsp; </td>
     <td>&nbsp;</td>
     <td colspan="4">&nbsp;</td>
-    <td width="89" align="left">Ditetapkan di </td>
-    <td width="9" align="center">:</td>
-    <td width="116">S I D O A R J O</td>
+    <td width="89" align="left">&nbsp; </td>
+    <td width="9" align="center">&nbsp;&nbsp;</td>
+    <td width="116">&nbsp;</td>
   </tr>
   <tr class="isi">
     <td >&nbsp;</td>
     <td>&nbsp;</td>
     <td colspan="4">&nbsp;</td>
-    <td align="left">Pada Tanggal</td>
-    <td align="center">:</td>
-    <td>
-         <?php echo  is_null($model->tgl_surat) ? '' : tanggal_indo($model->tgl_surat, false); ?>
+    <td align="left" >&nbsp;</td>
+
+    <td colspan=2 align=left width="30%">
+    Sidoarjo,  <?php echo  is_null($model->tgl_surat) ? '' : tanggal_indo($model->tgl_surat, false); ?>
     </td>
   </tr>
   <tr>
@@ -226,7 +230,7 @@ function terbilang($x)
     <td colspan="2" >&nbsp;</td>
     <td>&nbsp;</td>
     <td >&nbsp;</td>
-    <td colspan="7" align="right"><?php echo str_replace("%", "&nbsp;", str_pad('KABUPATEN SIDOARJO', strlen($titel), "%")); ?></td>
+    <td colspan="7" align="right"><?php echo str_replace('%', '&nbsp;', str_pad('KABUPATEN SIDOARJO', strlen($titel), '%')); ?></td>
   </tr>
   <tr>
     <td  colspan="10">&nbsp;</td>
@@ -239,7 +243,7 @@ function terbilang($x)
     <td colspan="2" >&nbsp;</td>
     <td>&nbsp;</td>
     <td >&nbsp;</td>
-    <td colspan="7" align="right"><?php echo str_replace("%", "&nbsp;", str_pad($model->penanda_tangan, strlen($titel), "%")); ?></td>
+    <td colspan="7" align="right"><?php echo str_replace('%', '&nbsp;', str_pad($model->penanda_tangan, strlen($titel), '%')); ?></td>
   </tr>
   <tr>
     <td  colspan="10">&nbsp;</td>
