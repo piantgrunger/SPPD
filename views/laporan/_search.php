@@ -24,13 +24,13 @@ $data = ArrayHelper::map(
             'method' => 'get',
         ]); ?>
  <div class="row">
-        <div class="col-sm-4">   <?= $form->field($model, 'tgl_aw')->widget(DateControl::classname()); ?></div>
+        <div class="col-sm-3">   <?= $form->field($model, 'tgl_aw')->widget(DateControl::classname()); ?></div>
 
-    <div class="col-sm-4">   <?= $form->field($model, 'tgl_ak')->widget(DateControl::classname()); ?></div>
+    <div class="col-sm-3">   <?= $form->field($model, 'tgl_ak')->widget(DateControl::classname()); ?></div>
     </div>
     
     <div class="row">
-        <div class="col-sm-8">  
+        <div class="col-sm-6">  
     <?= $form->field($model, 'id_alat_kelengkapan')->widget(Select2::className(), [
           'data' => $data,
         'options' => ['placeholder' => 'Pilih Alat Kelengkapan...',
