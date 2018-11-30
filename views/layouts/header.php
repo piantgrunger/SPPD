@@ -6,16 +6,16 @@ use hscstudio\mimin\components\Mimin;
 
 $menuItems =
         [
-                      [
-                        'visible' => !Yii::$app->user->isGuest,
-                        'label' => 'User / Group',
-                        'icon' => 'fa fa-share',
-                        'url' => '#',
-                        'items' => [
-                    ['label' => 'App. Route', 'icon' => 'fa fa-circle-o', 'url' => ['/mimin/route/'], 'visible' => !Yii::$app->user->isGuest],
-                    ['label' => 'Role', 'icon' => 'fa fa-circle-o', 'url' => ['/mimin/role/'], 'visible' => !Yii::$app->user->isGuest],
-                    ['label' => 'User', 'icon' => ' fa fa-circle-o', 'url' => ['/user/'], 'visible' => !Yii::$app->user->isGuest],
-                   ], ],
+                //       [
+                //         'visible' => !Yii::$app->user->isGuest,
+                //         'label' => 'User / Group',
+                //         'icon' => 'fa fa-share',
+                //         'url' => '#',
+                //         'items' => [
+                //     ['label' => 'App. Route', 'icon' => 'fa fa-circle-o', 'url' => ['/mimin/route/'], 'visible' => !Yii::$app->user->isGuest],
+                //     ['label' => 'Role', 'icon' => 'fa fa-circle-o', 'url' => ['/mimin/role/'], 'visible' => !Yii::$app->user->isGuest],
+                //     ['label' => 'User', 'icon' => ' fa fa-circle-o', 'url' => ['/user/'], 'visible' => !Yii::$app->user->isGuest],
+                //    ], ],
                       [
                         'visible' => !Yii::$app->user->isGuest,
                         'label' => 'Master',
