@@ -79,15 +79,20 @@ class LaporanController extends Controller
         return $pdf->render();
     }
 
-    public function actionCetakKartu($tgl_awal, $tgl_akhir, $alat_kelengkapan)
+    public function actionCetakKartu($tgl_awal, $tgl_akhir)
     {
         $model = SuratPerintahTugas::find()->where(['between', 'tgl_awal', $tgl_awal, $tgl_akhir])
-        ->andWhere("id_alat_kelengkapan=$alat_kelengkapan")->all();
-        $data = AlatKelengkapan::find()->where(['id_alat_kelengkapan' => $alat_kelengkapan])->one();
+      ;
+        $data = SuratPerintahTugas::find()->select('tb_mt_spt.id_alat_kelengkapan,alat_kelengkapan as nama_alat_kelengkapan')->distinct()->
+        innerJoin('tb_m_alat_kelengkapan', 'tb_m_alat_kelengkapan.id_alat_kelengkapan = tb_mt_spt.id_alat_kelengkapan')
+
+        ->where(['between', 'tgl_awal', $tgl_awal, $tgl_akhir])
+        ->orderBy('alat_kelengkapan')
+        ->all();
         $content = $this->renderPartial('kartu', [
             'model' => $model,
             'tanggal1' => $tgl_awal,
-            'alat_kelengkapan' => $data->alat_kelengkapan,
+            'list' => $data,
         ]);
         $pdf = new Pdf([
    // set to use core fonts only
