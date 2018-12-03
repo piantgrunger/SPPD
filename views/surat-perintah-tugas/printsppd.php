@@ -150,7 +150,7 @@ function terbilang($x)
     <td class="printbawah" >&nbsp;</td>
     <td class="printbawah printkiri">&nbsp;</td>
     <td colspan="7" align="left" class="printbawah printkanan"  >
-      Pada Tanggal &nbsp; : &nbsp;
+      Pada Tanggal &nbsp;
 
    <?php
       $tanggal = $model->tgl_awal;

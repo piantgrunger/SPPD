@@ -350,7 +350,7 @@ class SuratPerintahTugasController extends Controller
         $content = $this->renderPartial('printsppd', [
             'model' => $this->findModel($id),
             'mode' => 3,
-            'titel' => 'SEKRETARIS DAERAH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;',
+            'titel' => 'SEKRETARIS DAERAH ',
         ]);
         // setup kartik\mpdf\Pdf component
         $pdf = new Pdf([
