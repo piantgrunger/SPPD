@@ -118,19 +118,19 @@ function terbilang($x)
   <tr class="isi">
     <td width="25" align="center" valign="top" class="printkiri printatas" >4.</td>
     <td valign="top" width="266" class="printatas">Perjalanan Dinas Diperintahkan</td>
-    <td  class="printkiri printatas" >&nbsp;:&nbsp;  </td>
-    <td width="32"  class ="printatas">Dari </td>
-    <td colspan="1" class ="printatas">&nbsp;:&nbsp;</td>
-    <td colspan="5" class="printkanan printatas">Sidoarjo</td>
+    <td valign="top"  class="printkiri printatas" >&nbsp;:&nbsp;  </td>
+    <td valign="top"  width="32"  class ="printatas">Dari </td>
+    <td valign="top"  colspan="1" class ="printatas">&nbsp;:&nbsp;</td>
+    <td valign="top"  colspan="5" class="printkanan printatas">Sidoarjo</td>
     
   </tr>
   <tr class="isi">
-    <td class="printkiri" >&nbsp;</td>
-    <td >&nbsp;</td>
-    <td  class="printkiri">&nbsp;</td>
-    <td>Ke  </td>
-    <td colspan="5" class="">:&nbsp;<?php echo $model->nama_kota; ?></td>
-    <td colspan="1" class="printkanan">&nbsp;</td>
+    <td valign="top"  class="printkiri" >&nbsp;</td>
+    <td valign="top"  >&nbsp;</td>
+    <td valign="top"   class="printkiri">&nbsp;</td>
+    <td valign="top" >Ke  </td>
+    <td valign="top"  colspan="5" class="">:&nbsp;<?php echo $model->nama_kota; ?></td>
+    <td valign="top"  colspan="1" class="printkanan">&nbsp;</td>
   </tr>
   <tr class="isi">
     <td class="printkiri" >&nbsp;</td>
