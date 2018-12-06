@@ -120,7 +120,7 @@ function terbilang($x)
     <td valign="top" width="266" valign="top" class="printatas">Perjalanan Dinas Diperintahkan</td>
     <td  class="printkiri printatas" valign="top" >&nbsp;:&nbsp;  </td>
     <td width="32"  class ="printatas" valign="top">Dari </td>
-    
+
     <td colspan="5" class="printatas" valign="top">:&nbsp;Sidoarjo</td>
     <td colspan="1" class="printkanan">&nbsp;</td>
   </tr>
@@ -222,9 +222,8 @@ function terbilang($x)
   </tr>
    <tr class="isi">
     <td colspan="2" >&nbsp;</td>
-    <td>&nbsp;</td>
-    <td  >&nbsp;</td>
-    <td colspan="7" align="right"><?=$titel; ?></td>
+
+    <td colspan="8" align="right"><?=$titel; ?></td>
   </tr>
   <tr class="isi">
     <td colspan="2" >&nbsp;</td>
