@@ -117,19 +117,19 @@ function terbilang($x)
   </tr>
   <tr class="isi">
     <td width="25" align="center" valign="top" class="printkiri printatas" >4.</td>
-    <td valign="top" width="266" class="printatas">Perjalanan Dinas Diperintahkan</td>
-    <td  class="printkiri printatas" >&nbsp;:&nbsp;  </td>
-    <td width="32"  class ="printatas">Dari </td>
-    <td colspan="1" class ="printatas">&nbsp;:&nbsp;</td>
-    <td colspan="5" class="printkanan printatas">Sidoarjo</td>
+    <td valign="top" width="266" valign="top" class="printatas">Perjalanan Dinas Diperintahkan</td>
+    <td  class="printkiri printatas" valign="top" >&nbsp;:&nbsp;  </td>
+    <td width="32"  class ="printatas" valign="top">Dari </td>
     
+    <td colspan="5" class="printatas" valign="top">:&nbsp;Sidoarjo</td>
+    <td colspan="1" class="printkanan">&nbsp;</td>
   </tr>
-  <tr class="isi">
-    <td class="printkiri" >&nbsp;</td>
+  <tr class="isi" valign="top">
+    <td class="printkiri" valign="top">&nbsp;</td>
     <td >&nbsp;</td>
-    <td  class="printkiri">&nbsp;</td>
+    <td  class="printkiri" >&nbsp;</td>
     <td>Ke  </td>
-    <td colspan="5" class="">:&nbsp;<?php echo $model->nama_kota; ?></td>
+    <td colspan="5" class="" valign="top">:&nbsp;<?php echo $model->nama_kota; ?></td>
     <td colspan="1" class="printkanan">&nbsp;</td>
   </tr>
   <tr class="isi">
@@ -150,7 +150,7 @@ function terbilang($x)
     <td class="printbawah" >&nbsp;</td>
     <td class="printbawah printkiri">&nbsp;</td>
     <td colspan="7" align="left" class="printbawah printkanan"  >
-      Pada Tanggal &nbsp; : &nbsp;
+      Pada Tanggal &nbsp;
 
    <?php
       $tanggal = $model->tgl_awal;

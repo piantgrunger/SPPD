@@ -97,7 +97,7 @@ use yii\helpers\Url;
   	<td align="left" valign="top">Jabatan</td>
   	<td align="left" valign="top">:</td>
     <td  colspan="13" align="left"><?= $model->nama_alat_kelengkapan; ?></td>
-   
+
 <?php
         } ?>
         </tr>
@@ -246,10 +246,10 @@ use yii\helpers\Url;
   </tr>
   <tr class = "isi">
     <td height="16" colspan="1">&nbsp;</td>
-    <td colspan="12">&nbsp;Demikian agar yang bersangkutan melaksanakan tugas dengan penuh tanggung jawab dan</td>
+    <td colspan="12">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Demikian agar yang bersangkutan melaksanakan tugas dengan penuh tanggung jawab dan</td>
   </tr>
   <tr>
-    <td height="16" colspan="13" class = "isi"> &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;segera melaporkan hasilnya.</td>
+    <td height="16" colspan="12" class = "isi"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;segera melaporkan hasilnya.</td>
   </tr>
   <tr>
     <td height="18" colspan="13">&nbsp;</td>
