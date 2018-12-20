@@ -1,4 +1,6 @@
 <?php
+
+
 $tanggal = strtotime($tanggal1);
 $bulan = array(
     '01' => 'Januari',
@@ -20,7 +22,9 @@ $bulan = array(
 <Br>
 <br>
 <table width="100%">
- <tr><td width="80%"> Bulan : <?=$bulan[date('m', $tanggal)]; ?></td>  <td align="right">    Tanggal Cetak :<?=date('d/m/Y'); ?>  </td>  </tr> <br>
+ <tr><td width="80%"> &nbsp; </td>  <td align="right">    Tanggal Cetak :<?=date('d/m/Y'); ?>  </td>  </tr> <br>
+ <tr><td width="80%"> Nama Kegiatan : <?= $nama_kegiatan; ?></td> </tr> <br>
+
 </table>
 <table autosize="1" width="100%"  border="0" cellpadding="1" cellspacing="0">
 <tr>
@@ -28,8 +32,7 @@ $bulan = array(
 <td class="printatas printkanan printbawah " align="center">NOMOR</td>
 <td class="printatas printkanan printbawah " align="center">KOTA</td>
 <td class="printatas printkanan printbawah " align="center">TANGGAL</td>
-<td class="printatas printkanan printbawah " width="30%" align="center">URAIAN</td>
-<td class="printatas printkanan printbawah " align="center">NAMA KEGIATAN</td>
+<td class="printatas printkanan printbawah " width="30%"  align="center">URAIAN</td>
 <td class="printatas printkanan printbawah " align="center">ALAT KELENGKAPAN</td>
 
 <td class="printatas printkanan printbawah " align="center">NAMA PERSONIL</td>
@@ -57,7 +60,6 @@ foreach ($model  as $detail) {
 <td class=\" printkanan \" align=\"center\" >&nbsp;$detail->nama_kota</td>
 <td class=\" printkanan \"align=\"center\" >&nbsp;".Yii::$app->formatter->asDate($detail->tgl_awal).' - '.Yii::$app->formatter->asDate($detail->tgl_akhir)."</td>
 <td class=\" printkanan \" align=\"center\" >&nbsp;$$detail->untuk <br> Pada : <br> Hari : $detail->hariCetak <br> Tanggal : $detail->tanggalCetak <br> Tempat : $detail->tujuan </td>
-<td class=\" printkanan \" align=\"center\">&nbsp;$detail->nama_kegiatan</td>
 <td class=\" printkanan \" align=\"center\" >&nbsp;$detail->nama_alat_kelengkapan</td>
 <td class=\" printkanan \" align=\"center\">&nbsp;$anggota1</td>
 <td class=\" printkanan \" align=\"center\">&nbsp;$detail->selisih</td>

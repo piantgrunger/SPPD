@@ -1,15 +1,18 @@
-<?php $tanggal = strtotime($tanggal1); ?>
+<?php
+ use app\models\AlatKelengkapan;
 
-<p align='center'><b> KARTU MONITORING DAFTAR PERJALANAN DINAS <BR>TAHUN ANGGARAN <?= date('Y', $tanggal); ?></b></p>
+?>
+
+<p align='center'><b> KARTU MONITORING SPPD ALAT KELENGKAPAN <BR>TAHUN ANGGARAN <?= $tahun; ?></b></p>
 
 <?php
-   foreach ($list as $data) {
-       $filter= $model->where("id_alat_kelengkapan=".$data->id_alat_kelengkapan)->all();
 
+       $filter = $model->where('id_alat_kelengkapan='.$id_alat_kelengkapan)->orderBy('tgl_awal')->all();
+      $data = AlatKelengkapan::findOne($id_alat_kelengkapan);
        echo  $this->render('kartu_detail', [
         'model' => $filter,
-        'tanggal1' => $tanggal1,
-        'alat_kelengkapan' => $data->nama_alat_kelengkapan
+
+        'alat_kelengkapan' => $data->alat_kelengkapan,
     ]);
-   }
-?>\
+
+?>

@@ -1,5 +1,5 @@
 <?php
-$tanggal = strtotime($tanggal1);
+
 $bulan = array(
     '01' => 'Januari',
     '02' => 'Februari',
@@ -24,7 +24,7 @@ $bulan = array(
 <tr>
 <td class="printatas printkanan printkiri printbawah " align="center">NO</td>
 <td class="printatas printkanan printbawah " align="center">TANGGAL</td>
-<td class="printatas printkanan printbawah " align="center">URAIAN</td>
+<td class="printatas printkanan printbawah " width="30%"  align="center">URAIAN</td>
 <td class="printatas printkanan printbawah " align="center">NAMA PERSONIL</td>
 <td class="printatas printkanan printbawah " align="center">LAMA HARI</td>
 

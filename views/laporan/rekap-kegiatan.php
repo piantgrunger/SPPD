@@ -17,7 +17,6 @@ $bulan = array(
     '12' => 'Desember',
 );
 
-
 ?>
 <p align='center'><b> TAHUN ANGGARAN <?= date('Y', $tanggal); ?></b></p>
 <Br>
@@ -33,7 +32,7 @@ $bulan = array(
 <td class="printatas printkanan printbawah " align="center">NOMOR</td>
 <td class="printatas printkanan printbawah " align="center">KOTA</td>
 <td class="printatas printkanan printbawah " align="center">TANGGAL</td>
-<td class="printatas printkanan printbawah " align="center">URAIAN</td>
+<td class="printatas printkanan printbawah " width="30%"  align="center">URAIAN</td>
 <td class="printatas printkanan printbawah " align="center">ALAT KELENGKAPAN</td>
 
 <td class="printatas printkanan printbawah " align="center">NAMA PERSONIL</td>
