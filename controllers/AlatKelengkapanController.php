@@ -65,7 +65,9 @@ class AlatKelengkapanController extends Controller
 
     public function actionCopy()
     {
+        Yii::$app->db->createCommand('delete from tb_m_alat_kelengkapan where tahun='.date('Y'))->execute();
         $alatKelengkapan = AlatKelengkapan::find()->where(['tahun' => date('Y') - 1])->all();
+
         foreach ($alatKelengkapan as $data) {
             $new = new AlatKelengkapan();
             $new->alat_kelengkapan = $data->alat_kelengkapan;
@@ -73,7 +75,7 @@ class AlatKelengkapanController extends Controller
             $new->save();
             foreach ($data->detailAlatKelengkapan as $detail) {
                 $newDetail = new DetAlatKelengkapan();
-                $newDetail->id_alat_kelengkapan = $new->alat_kelengkapan;
+                $newDetail->id_alat_kelengkapan = $new->id_alat_kelengkapan;
                 $newDetail->id_personil = $detail->id_personil;
                 $newDetail->jenis = $detail->jenis;
                 $newDetail->save();

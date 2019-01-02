@@ -2,10 +2,8 @@
 
 namespace app\models;
 
-use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\AlatKelengkapan;
 
 /**
  * AlatKelengkapanSearch represents the model behind the search form of `app\models\AlatKelengkapan`.
@@ -13,7 +11,7 @@ use app\models\AlatKelengkapan;
 class AlatKelengkapanSearch extends AlatKelengkapan
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function rules()
     {
@@ -24,7 +22,7 @@ class AlatKelengkapanSearch extends AlatKelengkapan
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function scenarios()
     {
@@ -33,7 +31,7 @@ class AlatKelengkapanSearch extends AlatKelengkapan
     }
 
     /**
-     * Creates data provider instance with search query applied
+     * Creates data provider instance with search query applied.
      *
      * @param array $params
      *
@@ -57,6 +55,9 @@ class AlatKelengkapanSearch extends AlatKelengkapan
             return $dataProvider;
         }
 
+        if ($this->tahun == '') {
+            $this->tahun = date('Y');
+        }
         // grid filtering conditions
         $query->andFilterWhere([
             'id_alat_kelengkapan' => $this->id_alat_kelengkapan,
