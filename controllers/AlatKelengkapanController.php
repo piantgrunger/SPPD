@@ -65,7 +65,8 @@ class AlatKelengkapanController extends Controller
 
     public function actionCopy()
     {
-        Yii::$app->db->createCommand('delete from tb_m_alat_kelengkapan where tahun='.date('Y'))->execute();
+        Yii::$app->db->createCommand('delete from tb_m_alat_kelengkapan where tahun='.date('Y').' and id_alat_kelengkapan not in (select id_alat_kelengkapan from tb_mt_spt)'
+        )->execute();
         $alatKelengkapan = AlatKelengkapan::find()->where(['tahun' => date('Y') - 1])->all();
 
         foreach ($alatKelengkapan as $data) {
