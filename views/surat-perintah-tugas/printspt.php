@@ -291,59 +291,46 @@ use yii\helpers\Url;
     <td colspan="6" align="right"> <?=$titel; ?></td>
   </tr>
   <tr style="font-size:9px">
-    <td height="16">&nbsp;</td>
+  <td height="16">&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
+      <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
-    <td colspan="7" align="right"><?php  echo str_replace('%', '&nbsp;', str_pad('KABUPATEN SIDOARJO', strlen($titel), '%')); ?></td>
+    <td>&nbsp;</td>
+    <td colspan="6" align="right"><?php  echo str_replace('%', '&nbsp;', str_pad('KABUPATEN SIDOARJO', strlen($titel), '%')); ?></td>
   </tr>
   <tr style="font-size:9px">
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td colspan="7" align="right">&nbsp;</td>
+    
+    <td colspan="16" align="right">&nbsp;</td>
   </tr>
   <tr style="font-size:9px">
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td colspan="7" align="right">&nbsp;</td>
+
+    <td colspan="16" align="right">&nbsp;</td>
   </tr>
   <tr style="font-size:9px">
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td colspan="7" align="right">&nbsp;</td>
+
+    <td colspan="16" align="right">&nbsp;</td>
   </tr>
   <tr style="font-size:9px">
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td colspan="7" align="right"><?php  echo str_replace('%', '&nbsp;', str_pad($model->penanda_tangan, strlen($titel) + 3, '%')); ?></td>
+ 
+    <td colspan="16" align="right"><?php  echo str_replace('%', '&nbsp;', str_pad('<u>'.$model->penanda_tangan.'</u>', strlen($titel) + 3, '%')); ?></td>
   </tr>
+
+  <?php if ($model->nip !== '-') {
+           ?>
+
+<tr>
+    <td colspan="16" align="right"><?php  echo str_replace('%', '&nbsp;', str_pad($model->pangkat, strlen($titel) + 3, '%')); ?></td>
+    </tr>
+    <tr>
+    <td colspan="16" align="right">NIP : <?php  echo str_replace('%', '&nbsp;', str_pad($model->penandatangan->nip, strlen($titel) + 3, '%')); ?></td>
+    </tr>
+    <?php
+       } ?>
+
 
 </table>
