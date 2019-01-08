@@ -320,7 +320,7 @@ use yii\helpers\Url;
     <td colspan="16" align="right"><?php  echo str_replace('%', '&nbsp;', str_pad('<u>'.$model->penanda_tangan.'</u>', strlen($titel) + 3, '%')); ?></td>
   </tr>
 
-  <?php if ($model->nip !== '') {
+  <?php if ($model->nip !== '-') {
            ?>
 
 <tr>
