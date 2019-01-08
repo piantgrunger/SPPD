@@ -163,6 +163,16 @@ class SuratPerintahTugas extends \yii\db\ActiveRecord
         return $this->hasOne(Personil::className(), ['nama_personil' => 'penanda_tangan']);
     }
 
+    public function getPangkat()
+    {
+        return  is_null($this->penandatangan) ? '' : $this->penandatangan->nama_pangkat;
+    }
+
+    public function getNip()
+    {
+        return  is_null($this->penandatangan) ? '' : $this->penandatangan->nip;
+    }
+
     public function getSubSuratPerintahTugas()
     {
         return $this->hasMany(SubSuratPerintahTugas::className(), ['id_spt' => 'id_spt']);

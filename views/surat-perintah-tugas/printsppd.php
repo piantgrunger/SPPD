@@ -242,8 +242,23 @@ function terbilang($x)
     <td colspan="2" >&nbsp;</td>
     <td>&nbsp;</td>
     <td >&nbsp;</td>
-    <td colspan="7" align="right"><?php echo str_replace('%', '&nbsp;', str_pad($model->penanda_tangan, strlen($titel), '%')); ?></td>
+    <td colspan="7" align="right"><u><?php echo str_replace('%', '&nbsp;', str_pad($model->penanda_tangan, strlen($titel), '%')); ?></u></td>
+  
   </tr>
+  
+  <?php if ($model->nip !== '-') {
+            ?>
+
+<tr>
+    <td colspan="9" align="right"><?php  echo str_replace('%', '&nbsp;', str_pad($model->pangkat, strlen($titel) + 3, '%')); ?></td>
+    </tr>
+    <tr>
+    <td colspan="9" align="right">NIP : <?php  echo str_replace('%', '&nbsp;', str_pad($model->penandatangan->nip, strlen($titel) + 3, '%')); ?></td>
+    </tr>
+    <?php
+        } ?>
+
+
   <tr>
     <td  colspan="10">&nbsp;</td>
   </tr>
