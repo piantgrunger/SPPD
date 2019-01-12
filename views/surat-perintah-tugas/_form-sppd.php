@@ -100,6 +100,15 @@ $data5 = ArrayHelper::map(
       ],
   ]); ?>
 
+      <?= $form->field($model, 'id_kota2')->widget(Select2::className(), [
+            'data' => $data4,
+            'readonly' => true,
+            'options' => ['placeholder' => 'Pilih Kota Kedua...'],
+            'pluginOptions' => [
+                'allowClear' => true,
+            ],
+        ]); ?>
+
 
     </div>
 

@@ -14,7 +14,7 @@ use yii\helpers\Url;
   <tr>
     <td colspan="13" align="center">&nbsp;</td>
   </tr>
-  <tr>
+  <tr style="font-size:18px">
     <td height="22" colspan="3" align="center" class="judul">&nbsp;</td>
     <td height="22" colspan="8" align="center" class="judul"><b><u>SURAT PERINTAH TUGAS</u> </b></td>
     <td height="22" colspan="3" align="center" class="judul">&nbsp;</td>
@@ -41,8 +41,8 @@ use yii\helpers\Url;
   <tr>
     <td colspan="13" align="center">&nbsp;</td>
   </tr>
-  <tr>
-    <td height="22" colspan="13" align="center" class="judul"><b>MEMERINTAHKAN</b></td>
+  <tr style="font-size:18px">
+    <td height="22" colspan="13" align="center" class="judul">&nbsp;&nbsp;<b>MEMERINTAHKAN</b></td>
   </tr>
   <tr>
     <td height="22" colspan="13" align="center" class="judul">&nbsp;</td>
@@ -102,7 +102,9 @@ use yii\helpers\Url;
         } ?>
         </tr>
 
-
+<tr>
+    <td height="18" colspan="13">&nbsp;</td>
+  </tr>
 
   <tr class="isi">
   	<td height="18" align="right">&nbsp;</td>
@@ -246,20 +248,20 @@ use yii\helpers\Url;
   </tr>
   <tr class = "isi">
     <td height="16" colspan="1">&nbsp;</td>
-    <td colspan="12">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Demikian agar yang bersangkutan melaksanakan tugas dengan penuh tanggung jawab dan</td>
+    <td colspan="12">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Demikian agar yang bersangkutan melaksanakan tugas dengan penuh tanggung jawab dan</td>
   </tr>
   <tr>
-    <td height="16" colspan="12" class = "isi"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;segera melaporkan hasilnya.</td>
+    <td height="16" colspan="12" class = "isi"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;segera melaporkan hasilnya.</td>
   </tr>
   <tr>
-    <td height="18" colspan="13">&nbsp;</td>
+    <td height="16" colspan="13">&nbsp;</td>
   </tr>
   <tr class = "isi">
-    <td height="16" colspan="11" align="right">Ditetapkan di&nbsp;&nbsp;</td>
+    <td height="16" colspan="12" align="right">Ditetapkan di&nbsp;&nbsp;</td>
     <td colspan="2">:&nbsp;S I D O A R J O</td>
   </tr>
   <tr class = "isi">
-    <td height="18" colspan="11" align="right">Pada tanggal&nbsp;&nbsp;&nbsp;</td>
+    <td height="18" colspan="12" align="right">Pada tanggal&nbsp;&nbsp;&nbsp;</td>
     <td colspan="2">:&nbsp;<?php echo  is_null($model->tgl_surat) ? '' : tanggal_indo($tglSurat, false); ?></td>
   </tr>
   <tr>
@@ -317,17 +319,17 @@ use yii\helpers\Url;
   </tr>
   <tr style="font-size:9px">
  
-    <td colspan="16" align="right"><?php  echo str_replace('%', '&nbsp;', str_pad('<u>'.$model->penanda_tangan.'</u>', strlen($titel) + 3, '%')); ?></td>
+    <td colspan="16" align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php  echo str_replace('%', '&nbsp;', str_pad($model->penanda_tangan, strlen($titel) + 3, '%')); ?></td>
   </tr>
 
   <?php if ($model->nip !== '-') {
            ?>
 
 <tr>
-    <td colspan="16" align="right"><?php  echo str_replace('%', '&nbsp;', str_pad($model->pangkat, strlen($titel) + 3, '%')); ?></td>
+    <td colspan="14" align="right"><?php  echo str_replace('%', '&nbsp;', str_pad($model->pangkat, strlen($titel) + 3, '%')); ?></td>
     </tr>
     <tr>
-    <td colspan="16" align="right">NIP : <?php  echo str_replace('%', '&nbsp;', str_pad($model->penandatangan->nip, strlen($titel) + 3, '%')); ?></td>
+    <td colspan="14" align="right">NIP .<?php  echo str_replace('%', '&nbsp;', str_pad($model->penandatangan->nip, strlen($titel) + 3, '%')); ?></td>
     </tr>
     <?php
        } ?>

@@ -129,7 +129,7 @@ function terbilang($x)
     <td >&nbsp;</td>
     <td  class="printkiri" >&nbsp;</td>
     <td>Ke  </td>
-    <td colspan="5" class="" valign="top">:&nbsp;<?php echo $model->nama_kota; ?></td>
+    <td colspan="5" class="" valign="top">:&nbsp;<?php echo $model->nama_kota. $model->nama_kota_dua; ?></td>
     <td colspan="1" class="printkanan">&nbsp;</td>
   </tr>
   <tr class="isi">
@@ -206,10 +206,7 @@ function terbilang($x)
     <td >&nbsp;</td>
     <td>&nbsp;</td>
     <td colspan="4">&nbsp;</td>
-    <td align="left" >&nbsp;</td>
-
-    <td colspan=2 align=left width="30%">
-    Sidoarjo,  <?php echo  is_null($model->tgl_surat) ? '' : tanggal_indo($model->tgl_surat, false); ?>
+    <td colspan="4" align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sidoarjo,  <?php echo  is_null($model->tgl_surat) ? '' : tanggal_indo($model->tgl_surat, false); ?>
     </td>
   </tr>
   <tr>
@@ -223,13 +220,13 @@ function terbilang($x)
    <tr class="isi">
     <td colspan="2" >&nbsp;</td>
 
-    <td colspan="8" align="right"><?=$titel; ?></td>
+    <td colspan="7" align="right"><?=$titel; ?></td>
   </tr>
   <tr class="isi">
-    <td colspan="2" >&nbsp;</td>
+    <td colspan="3" >&nbsp;</td>
     <td>&nbsp;</td>
     <td >&nbsp;</td>
-    <td colspan="7" align="right"><?php echo str_replace('%', '&nbsp;', str_pad('KABUPATEN SIDOARJO', strlen($titel), '%')); ?></td>
+    <td colspan="7" align="center">&nbsp;&nbsp;&nbsp;<?php echo str_replace('%', '&nbsp;', str_pad('KABUPATEN SIDOARJO', strlen($titel), '%')); ?></td>
   </tr>
   <tr>
     <td  colspan="10">&nbsp;</td>
@@ -237,15 +234,18 @@ function terbilang($x)
   <tr>
     <td colspan="10">&nbsp;</td>
   </tr>
-
-  <tr class="isi">
-    <td colspan="2" >&nbsp;</td>
-    <td>&nbsp;</td>
-    <td >&nbsp;</td>
-    <td colspan="7" align="right"><u><?php echo str_replace('%', '&nbsp;', str_pad($model->penanda_tangan, strlen($titel), '%')); ?></u></td>
-  
+  <tr>
+    <td colspan="10">&nbsp;</td>
   </tr>
-  
+  <tr>
+    <td colspan="10">&nbsp;</td>
+  </tr>
+  <tr class="isi">
+    <td colspan="3" >&nbsp;</td>
+    <td colspan="10" align="center"><?php echo str_replace('%', '&nbsp;', str_pad('<b>'.'<u>'.$model->penanda_tangan.'</u>'.'</b>', strlen($titel), '%')); ?></td>
+
+  </tr>
+
   <?php if ($model->nip !== '-') {
             ?>
 
@@ -257,20 +257,6 @@ function terbilang($x)
     </tr>
     <?php
         } ?>
-
-
-  <tr>
-    <td  colspan="10">&nbsp;</td>
-  </tr>
-  <tr>
-    <td  colspan="10">&nbsp;</td>
-  </tr>
-  <tr>
-    <td  colspan="10">&nbsp;</td>
-  </tr>
-  <tr>
-    <td  colspan="10">&nbsp;</td>
-  </tr>
   <tr>
     <td  colspan="10">&nbsp;</td>
   </tr>

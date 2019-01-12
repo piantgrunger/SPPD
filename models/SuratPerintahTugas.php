@@ -77,7 +77,7 @@ class SuratPerintahTugas extends \yii\db\ActiveRecord
     {
         return [
             [['no_spt',  'untuk', 'tujuan', 'zona', 'tgl_awal', 'dasar', 'jenis', 'tgl_akhir'], 'required'],
-            [['kendaraan', 'id_kegiatan', 'id_kota', 'tgl_surat'], 'safe'],
+            [['kendaraan', 'id_kegiatan', 'id_kota', 'id_kota2', 'tgl_surat'], 'safe'],
             [['id_alat_kelengkapan'], 'integer'],
             [['untuk', 'tujuan', 'dasar', 'jenis'], 'string'],
             [['no_spt'], 'string', 'max' => 50],
@@ -117,6 +117,10 @@ class SuratPerintahTugas extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Kota::className(), ['id_kota' => 'id_kota']);
     }
+    public function getKotaDua()
+    {
+        return $this->hasOne(Kota::className(), ['id_kota' => 'id_kota2']);
+    }
 
     public function getKegiatan()
     {
@@ -126,6 +130,11 @@ class SuratPerintahTugas extends \yii\db\ActiveRecord
     public function getNama_alat_kelengkapan()
     {
         return is_null($this->alatKelengkapan) ? '' : $this->alatKelengkapan->alat_kelengkapan;
+    }
+
+    public function getNama_kota_dua()
+    {
+        return is_null($this->kotaDua) ? '' : " dan ". $this->kotaDua->nama_kota;
     }
 
     public function getNama_kota()

@@ -14,6 +14,7 @@ class m181128_081021_personil extends Migration
     {
         //$this->execute('delete from tb_mt_spt');
 
+       /*
         $this->execute('delete from tb_d_alat_kelengkapan');
         $this->execute(' delete from tb_m_personil where id_personil not in (select id_personil from tb_dt_spt)');
 
@@ -464,8 +465,9 @@ class m181128_081021_personil extends Migration
         (367, 4, 109, 'Wakil Ketua DPRD'),
         (383, 7, 116, 'Wakil Ketua DPRD'),
         (384, 7, 109, 'Wakil Ketua DPRD');
-        
+
         ");
+        */
     }
 
     /**
