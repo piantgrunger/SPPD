@@ -99,7 +99,8 @@ function terbilang($x)
   <tr class="isi" >
     <td align="center" valign="top" class="printatas printkiri" >1.</td>
     <td valign="top"  class="printatas">Pejabat yang memberi perintah</td>
-    <td class="printatas printkiri" >&nbsp;:&nbsp; </td    ><td colspan="7"  class="printatas printkanan"><?php echo $model->penanda_tangan; ?></td>
+    <td class="printatas printkiri" >&nbsp;:&nbsp; </td    >
+    <td colspan="7"  class="printatas printkanan"><?php echo $model->penanda_tangan; ?></td>
   </tr>
   <tr class="isi">
     <td align="center"  valign="top" class="printkiri printatas" >2.</td>
@@ -113,7 +114,7 @@ function terbilang($x)
     <td class="printatas" >Jabatan, Pangkat dan Golongan dari yang diperintah</td>
     <td valign="top" style = "" class="printatas printkiri">&nbsp;:&nbsp;</td>
     <td colspan="7" valign="top" class="printatas printkanan" ><?php  echo ($row->status_personil !== 'Dewan') ? $row->jabatan.'  '.$row->pangkat :
-      $row->jenis.'  '.(strpos($row->jenis, 'DPRD') ? 'Kabupaten Sidoarjo' : $model->nama_alat_kelengkapan); ?>&nbsp;</td>
+      $row->jenis.'  '.(strpos($row->jenis, 'DPRD') ? 'Kabupaten Sidoarjo' : $model->nama_alat_kelengkapan); ?></td>
   </tr>
   <tr class="isi">
     <td width="25" align="center" valign="top" class="printkiri printatas" >4.</td>
@@ -122,7 +123,7 @@ function terbilang($x)
     <td width="32"  class ="printatas" valign="top">Dari </td>
 
     <td colspan="5" class="printatas" valign="top">:&nbsp;Sidoarjo</td>
-    <td colspan="1" class="printkanan">&nbsp;</td>
+    <td colspan="1" class="printkanan printatas">&nbsp;</td>
   </tr>
   <tr class="isi" valign="top">
     <td class="printkiri" valign="top">&nbsp;</td>
