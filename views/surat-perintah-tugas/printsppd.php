@@ -106,7 +106,7 @@ function terbilang($x)
     <td  class="printatas">Nama / NIP Pegawai yang Diperintah mengadakan perjalanan dinas</td>
     <td valign="top" class="printkiri printatas">
     &nbsp;:&nbsp; </td>
-    <td colspan="7" valign="top" class="printatas printkanan"><?php echo $row->nama_personil; ?> &nbsp;/&nbsp;<?php echo $row->nip; ?> </td>
+    <td colspan="7" valign="top" class="printatas printkanan"><?php echo $row->nama_personil; ?><?php echo  ($row->nip != '-') ? ' / '.$row->nip : ''; ?> </td>
   </tr>
   <tr class="isi">
     <td align="center" valign="top" class="printatas printkiri">3.</td>
@@ -129,7 +129,7 @@ function terbilang($x)
     <td >&nbsp;</td>
     <td  class="printkiri" >&nbsp;</td>
     <td>Ke  </td>
-    <td colspan="5" class="" valign="top">:&nbsp;<?php echo $model->nama_kota. $model->nama_kota_dua; ?></td>
+    <td colspan="5" class="" valign="top">:&nbsp;<?php echo $model->nama_kota.$model->nama_kota_dua; ?></td>
     <td colspan="1" class="printkanan">&nbsp;</td>
   </tr>
   <tr class="isi">
@@ -242,7 +242,7 @@ function terbilang($x)
   </tr>
   <tr class="isi">
     <td colspan="3" >&nbsp;</td>
-    <td colspan="10" align="center"><?php echo str_replace('%', '&nbsp;', str_pad('<b>'.'<u>'.$model->penanda_tangan.'</u>'.'</b>', strlen($titel), '%')); ?></td>
+    <td colspan="10" align="center"><?php echo str_replace('%', '&nbsp;', str_pad('<b>'.(($mode != 1) ? '<u>' : '').$model->penanda_tangan.(($mode != 1) ? '</u>' : '').'</b>', strlen($titel), '%')); ?></td>
 
   </tr>
 
